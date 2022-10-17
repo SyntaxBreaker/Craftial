@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    @media screen and (min-width: 768px) {
+        justify-content: space-between;
+    }
+
+    h1 {
+        display: none;
+
+        @media screen and (min-width: 768px) {
+            display: initial;
+        }
+    }
+
+    form {
+        input {
+            padding: 0.2rem;
+        }
+    }
+
+    div {
+       display: none;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+        }
+    }
+}
