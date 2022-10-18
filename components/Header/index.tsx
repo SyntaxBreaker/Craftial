@@ -1,4 +1,4 @@
-import styles from './header.module.scss';
+import styles from "./header.module.scss";
 
 function Header() {
     return (
@@ -10,17 +10,18 @@ function Header() {
                     placeholder="Search for..."
                     className={styles.input}
                 />
-                <input
-                    type="submit"
-                    value='🔍'
-                />
+                <input type="submit" value="🔍" />
             </form>
             <div className={styles.div}>
-                <span><p>💙</p></span>
-                <span><p>🧔</p></span>
+                <span>
+                    <p>💙</p>
+                </span>
+                <span>
+                    <p>🧔</p>
+                </span>
             </div>
         </header>
-    )
+    );
 }
 
 export default Header;
