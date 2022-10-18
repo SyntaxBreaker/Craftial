@@ -41,21 +41,31 @@ const categories: ICategories[] = [
 
 function Categories() {
     return (
-        <section className={styles.wrapper}>
-            <div className={styles.categories}>
-                <h2>Categories</h2>
-                <ul>
+        <section className={styles["wrapper"]}>
+            <div className={styles["categories"]}>
+                <h2 className={styles["categories__heading"]}>Categories</h2>
+                <ul className={styles["category-list"]}>
                     {categories.map((category) => (
-                        <li key={category.name}>
-                            <div>
+                        <li
+                            key={category.name}
+                            className={styles["category-list__item"]}
+                        >
+                            <div
+                                className={
+                                    styles["category-list__image-wrapper"]
+                                }
+                            >
                                 <Image
                                     src={category.imageURL}
                                     height="100px"
                                     width="100px"
                                     alt=""
+                                    className={styles["category-list__image"]}
                                 />
                             </div>
-                            <p>{category.name}</p>
+                            <p className={styles["category-list__name"]}>
+                                {category.name}
+                            </p>
                         </li>
                     ))}
                 </ul>
