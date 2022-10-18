@@ -10,10 +10,14 @@ function Header() {
                     placeholder="Search for..."
                     className={styles.input}
                 />
+                <input
+                    type="submit"
+                    value='🔍'
+                />
             </form>
             <div className={styles.div}>
-                <span>Favorites</span>
-                <span>Avatar</span>
+                <span><p>💙</p></span>
+                <span><p>🧔</p></span>
             </div>
         </header>
     )
