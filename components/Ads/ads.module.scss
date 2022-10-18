@@ -1,0 +1,14 @@
+.wrapper {
+    .ads {
+        background-color: #188b7b;
+        color: #fffefd;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: 768px) {
+            height: 15rem;
+        }
+    }
+}
