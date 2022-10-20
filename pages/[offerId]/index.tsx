@@ -1,16 +1,12 @@
 import {useRouter} from 'next/router';
-import Gallery from '../../components/Gallery';
-import OfferDetails from '../../components/OfferDetails';
+import OfferLayout from '../../components/OfferLayout';
 
 function Offer() {
     const router = useRouter();
-    const {offerId} = router.query;
+    const offerId = router.query.offerId as string;
 
     return (
-        <>
-            <Gallery />
-            <OfferDetails />
-        </>
+        <OfferLayout offerId={offerId} />
     )
 }
 
