@@ -1,5 +1,6 @@
 import styles from "./offers.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IOffer {
     id: number;
@@ -60,58 +61,60 @@ function Offers() {
             <h2 className={styles["wrapper-title"]}>Chosen offers for you!</h2>
             <div className={styles["offers"]}>
                 {offers.map((offer) => (
-                    <div className={styles["offer-card"]} key={offer.id}>
-                        <div className={styles["offer-card__header"]}>
-                            <Image
-                                src="https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg"
-                                alt=""
-                                width="100%"
-                                height="50px"
-                                sizes="(min-width: 768px) 960px, 720px"
-                                className={styles["offer-card__image"]}
-                            />
-                        </div>
-                        <div className={styles["offer-card__body"]}>
-                            <h3
-                                className={`${styles["offer-card__name"]} ${styles["offer-card__name--golden"]}`}
-                            >
-                                {offer.name}
-                            </h3>
-                            <p className={styles["offer-card__price"]}>
-                                Price:{" "}
-                                <span
-                                    className={`
+                    <Link href={`/${offer.id}`} key={offer.id}>
+                        <div className={styles["offer-card"]}>
+                            <div className={styles["offer-card__header"]}>
+                                <Image
+                                    src="https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg"
+                                    alt=""
+                                    width="100%"
+                                    height="50px"
+                                    sizes="(min-width: 768px) 960px, 720px"
+                                    className={styles["offer-card__image"]}
+                                />
+                            </div>
+                            <div className={styles["offer-card__body"]}>
+                                <h3
+                                    className={`${styles["offer-card__name"]} ${styles["offer-card__name--golden"]}`}
+                                >
+                                    {offer.name}
+                                </h3>
+                                <p className={styles["offer-card__price"]}>
+                                    Price:{" "}
+                                    <span
+                                        className={`
                                         ${styles["offer-card__price--bold"]}
                                         ${styles["offer-card__price--golden"]}
                                     `}
-                                >
-                                    ${offer.price}
-                                </span>
-                            </p>
-                            <p className={styles["offer-card__location"]}>
-                                Location:{" "}
-                                <span
-                                    className={`
+                                    >
+                                        ${offer.price}
+                                    </span>
+                                </p>
+                                <p className={styles["offer-card__location"]}>
+                                    Location:{" "}
+                                    <span
+                                        className={`
                                         ${styles["offer-card__location--bold"]}
                                         ${styles["offer-card__location--golden"]}
                                     `}
-                                >
-                                    {offer.location}
-                                </span>
-                            </p>
-                            <p className={styles["offer-card__date"]}>
-                                Publication date:{" "}
-                                <span
-                                    className={`
+                                    >
+                                        {offer.location}
+                                    </span>
+                                </p>
+                                <p className={styles["offer-card__date"]}>
+                                    Publication date:{" "}
+                                    <span
+                                        className={`
                                     ${styles["offer-card__date--bold"]}
                                     ${styles["offer-card__date--golden"]}
                                 `}
-                                >
-                                    {offer.publicationDate.toLocaleDateString()}
-                                </span>
-                            </p>
+                                    >
+                                        {offer.publicationDate.toLocaleDateString()}
+                                    </span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>

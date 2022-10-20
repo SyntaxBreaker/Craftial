@@ -1,4 +1,6 @@
 import {useRouter} from 'next/router';
+import Gallery from '../../components/Gallery';
+import OfferDetails from '../../components/OfferDetails';
 
 function Offer() {
     const router = useRouter();
@@ -6,7 +8,8 @@ function Offer() {
 
     return (
         <>
-            <h2>{offerId}</h2>
+            <Gallery />
+            <OfferDetails />
         </>
     )
 }

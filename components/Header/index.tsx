@@ -1,9 +1,14 @@
 import styles from "./header.module.scss";
+import Link from "next/link";
 
 function Header() {
     return (
         <header className={styles["header"]}>
-            <h1 className={styles["header__logo"]}>Craftial</h1>
+            <h1 className={styles["header__logo"]}>
+                <Link href="/">
+                    <a className={styles["header__link"]}>Craftial</a>
+                </Link>
+            </h1>
             <form className={styles["form"]}>
                 <input
                     type="search"

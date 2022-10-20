@@ -24,6 +24,10 @@
         overflow: hidden;
         border-radius: 10px;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         &__body {
             padding: 0.5rem;
             overflow-wrap: break-word;
