@@ -1,8 +1,17 @@
 .offer-layout {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 
     @media screen and (min-width: 768px) {
+        margin: 0 auto;
+        width: 75%;
         flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin: 0 auto;
+        width: 50%;
     }
 }

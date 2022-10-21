@@ -4,10 +4,10 @@ import styles from './offerLayout.module.scss';
 
 function OfferLayout({offerId}: {offerId?: string}) {
     return (
-        <main className={styles['offer-layout']}>
+        <section className={styles['offer-layout']}>
             <Gallery />
             <OfferDetails />
-        </main>
+        </section>
     )
 }
 

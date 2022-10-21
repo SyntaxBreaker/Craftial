@@ -1,6 +1,31 @@
 .image-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     
-    .button {}
+
+    .gallery {
+        &__button {
+            position: absolute;
+            width: 75px;
+            background-color: transparent;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0;
+
+            &--next {
+                right: 0;
+            }
+    
+            &--prev {
+                left: 0;
+            }
+        }
+    }
+
+
+    @media screen and (min-width: 768px) {
+        width: 50%;
+        height: auto;
+    }
 }
