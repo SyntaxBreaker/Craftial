@@ -7,7 +7,7 @@
         margin: 0 auto;
         width: 75%;
         flex-direction: row;
-        justify-content: space-between;
+        gap: 2rem;
     }
 
     @media screen and (min-width: 1440px) {

@@ -1,0 +1,27 @@
+.offer-details {
+    width: 100%;
+    margin-top: 1rem;
+
+    &__price, &__description {
+        margin-top: .5rem;
+    }
+
+    &__title {}
+
+    &__price {}
+
+    &__description {
+        line-height: 1.4rem;
+    }
+
+    &__price--bold, &__description--bold {
+        font-weight: 900;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 50%;
+        position: sticky;
+        top: 1rem;
+        height: 100%;
+    }
+}
