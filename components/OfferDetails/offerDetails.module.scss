@@ -6,16 +6,29 @@
         margin-top: .5rem;
     }
 
-    &__title {}
-
-    &__price {}
-
-    &__description {
-        line-height: 1.4rem;
+    &__title {
+        font-weight: bold;
+        color: #188b7b;
+        font-size: 2rem;
     }
 
-    &__price--bold, &__description--bold {
+    &__price {
+        font-weight: bold;
+        color: #188b7b;
+        font-size: 1.125rem;
+    }
+
+    &__description {
+        line-height: 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    &__description--bold {
         font-weight: 900;
+    }
+
+    &__description--green {
+        color: #188b7b;
     }
 
     @media screen and (min-width: 768px) {
