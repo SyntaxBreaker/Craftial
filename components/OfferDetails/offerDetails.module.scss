@@ -2,33 +2,67 @@
     width: 100%;
     margin-top: 1rem;
 
-    &__price, &__description {
-        margin-top: .5rem;
+    &__price,
+    &__description,
+    &__location {
+        margin-top: 0.75rem;
+
+        &--bold {
+            font-weight: bold;
+        }
     }
 
     &__title {
-        font-weight: bold;
         color: #188b7b;
         font-size: 2rem;
+
+        &--bold {
+            font-weight: bold;
+        }
+    }
+
+    &__location {
+        color: #188b7b;
+        font-size: 0.875rem;
     }
 
     &__price {
-        font-weight: bold;
         color: #188b7b;
         font-size: 1.125rem;
+    }
+
+    .offer-contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding: 1rem 0;
+        font-size: 0.75rem;
+        border-top: 1px solid #188b7b;
+        border-bottom: 1px solid #188b7b;
+
+        &__email,
+        &__phone-number {
+            color: #373319;
+
+            &--bold {
+                font-weight: bold;
+            }
+        }
     }
 
     &__description {
         line-height: 1.5rem;
         font-size: 0.875rem;
-    }
 
-    &__description--bold {
-        font-weight: 900;
-    }
+        &--bold {
+            font-weight: 900;
+        }
 
-    &__description--green {
-        color: #188b7b;
+        &--green {
+            color: #188b7b;
+        }
     }
 
     @media screen and (min-width: 768px) {
