@@ -1,5 +1,5 @@
 export interface IOffer {
-    id: string;
+    _id: string;
     title: string;
     location: string;
     price: string;
