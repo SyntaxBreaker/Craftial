@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
-import {GetStaticProps} from 'next';
 import OfferLayout from "../../components/OfferLayout";
 import { IOffer } from "../../types";
-
 
 function Offer(offer: IOffer) {
     return <OfferLayout {...offer} />;
@@ -19,7 +17,7 @@ export const getStaticPaths = () => {
             },
         ],
     };
-}
+};
 
 export function getStaticProps(context) {
     const { params } = context;
@@ -28,7 +26,7 @@ export function getStaticProps(context) {
     return {
         props: {
             id: offerId,
-            title: "Lorem ipsum",
+            name: "Lorem ipsum",
             location: "Sandwell, West Midlands",
             price: "10.000",
             email: "test@example.com",

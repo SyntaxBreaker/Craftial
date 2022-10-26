@@ -12,16 +12,16 @@ interface IImage {
 const images: IImage[] = [
     {
         id: 0,
-        url: 'https://cdn.pixabay.com/photo/2022/10/16/13/53/early-morning-7525151_960_720.jpg'
+        url: "https://cdn.pixabay.com/photo/2022/10/16/13/53/early-morning-7525151_960_720.jpg",
     },
     {
         id: 1,
-        url: 'https://cdn.pixabay.com/photo/2022/08/26/04/19/beach-7411683_960_720.jpg'
+        url: "https://cdn.pixabay.com/photo/2022/08/26/04/19/beach-7411683_960_720.jpg",
     },
     {
         id: 2,
-        url: 'https://cdn.pixabay.com/photo/2022/10/13/07/54/crane-houses-7518536_960_720.jpg'
-    }
+        url: "https://cdn.pixabay.com/photo/2022/10/13/07/54/crane-houses-7518536_960_720.jpg",
+    },
 ];
 
 function Gallery() {
@@ -41,7 +41,9 @@ function Gallery() {
             {isMobile ? (
                 <>
                     <Image
-                        src={images.find(image => imageIndex === image.id)?.url}
+                        src={
+                            images.find((image) => imageIndex === image.id)?.url
+                        }
                         alt=""
                         width="150px"
                         height="150px"
