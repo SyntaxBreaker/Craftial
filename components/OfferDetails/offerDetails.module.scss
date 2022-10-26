@@ -1,3 +1,5 @@
+@use "../../utils/variables";
+
 .offer-details {
     width: 100%;
     margin-top: 1rem;
@@ -13,7 +15,7 @@
     }
 
     &__name {
-        color: #188b7b;
+        color: variables.$primary-color;
         font-size: 2rem;
 
         &--bold {
@@ -22,12 +24,12 @@
     }
 
     &__location {
-        color: #188b7b;
+        color: variables.$primary-color;
         font-size: 0.875rem;
     }
 
     &__price {
-        color: #188b7b;
+        color: variables.$primary-color;
         font-size: 1.125rem;
     }
 
@@ -39,12 +41,12 @@
         margin-top: 1rem;
         padding: 1rem 0;
         font-size: 0.875rem;
-        border-top: 1px solid #188b7b;
-        border-bottom: 1px solid #188b7b;
+        border-top: 1px solid variables.$primary-color;
+        border-bottom: 1px solid variables.$primary-color;
 
         &__email,
         &__phone-number {
-            color: #373319;
+            color: variables.$tertiary-color;
 
             &--bold {
                 font-weight: bold;
@@ -61,7 +63,7 @@
         }
 
         &--green {
-            color: #188b7b;
+            color: variables.$primary-color;
         }
     }
 

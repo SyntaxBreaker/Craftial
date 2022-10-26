@@ -1,3 +1,5 @@
+@use "../../utils/variables";
+
 .wrapper {
     width: 100%;
     min-height: 10rem;
@@ -17,8 +19,8 @@
     }
 
     .offer-card {
-        background-color: #188b7b;
-        color: #fffefd;
+        background-color: variables.$primary-color;
+        color: variables.$quaternary-color;
         flex-basis: 45%;
         min-height: 200px;
         overflow: hidden;
@@ -44,7 +46,7 @@
             }
 
             &--golden {
-                color: #eec82a;
+                color: variables.$secondary-color;
             }
         }
 

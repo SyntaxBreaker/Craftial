@@ -10,5 +10,5 @@ export interface IOffer {
 }
 
 export interface IOffers {
-    offers: IOffer[]
+    offers: IOffer[];
 }
