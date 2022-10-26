@@ -23,6 +23,11 @@ function Header() {
             </form>
             <div className={styles["account"]}>
                 <span className={styles["account__item"]}>
+                    <Link href="/newOffer">
+                        <a className={styles["account__link"]}>➕</a>
+                    </Link>
+                </span>
+                <span className={styles["account__item"]}>
                     <p>💙</p>
                 </span>
                 <span className={styles["account__item"]}>
