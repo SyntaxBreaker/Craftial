@@ -1,4 +1,3 @@
-import Ads from "../components/Ads";
 import Categories from "../components/Categories";
 import Offers from "../components/Offers";
 import connectToMongoDB from "../utils/mongoDB";
@@ -8,7 +7,6 @@ import { IOffers } from "../types";
 function Home({ offers }: IOffers) {
     return (
         <>
-            <Ads />
             <Categories />
             <Offers offers={offers} />
         </>
