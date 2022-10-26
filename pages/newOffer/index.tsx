@@ -1,4 +1,5 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useState } from "react";
+import { useRouter } from "next/router";
 import styles from "./newOffer.module.scss";
 
 interface IOffer {
@@ -19,6 +20,8 @@ function NewOffer() {
         phoneNumber: "",
         description: "",
     });
+
+    const router = useRouter();
 
     const handleChange = (
         event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -44,6 +47,8 @@ function NewOffer() {
         })
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
+
+        router.push("/");
     };
 
     return (
