@@ -41,20 +41,14 @@ function Header() {
                         <span className={styles["account__item"]}>
                             <p>🧔</p>
                         </span>
-                        <a
-                            href="/api/auth/logout"
-                            className={styles["account__link"]}
-                        >
-                            Logout
-                        </a>
+                        <Link href="/api/auth/logout">
+                            <a className={styles["account__link"]}>Logout</a>
+                        </Link>
                     </>
                 ) : (
-                    <a
-                        href="/api/auth/login"
-                        className={styles["account__link"]}
-                    >
-                        Login
-                    </a>
+                    <Link href="/api/auth/login">
+                        <a className={styles["account__link"]}>Login</a>
+                    </Link>
                 )}
             </div>
         </header>

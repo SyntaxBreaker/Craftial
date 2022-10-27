@@ -3,6 +3,7 @@ import OfferLayout from "../../components/OfferLayout";
 import { IOffer } from "../../types";
 import connectToMongoDB from "../../utils/mongoDB";
 import offer from "../../models/offer";
+import { GetStaticPathsContext, GetStaticPathsResult, GetStaticPropsContext } from "next";
 
 function Offer(offer: IOffer) {
     return <OfferLayout {...offer} />;
@@ -21,10 +22,10 @@ export const getStaticPaths = () => {
     };
 };
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const { params } = context;
-        const offerId = params.offerId;
+        const offerId = params!.offerId;
 
         await connectToMongoDB();
         const doc = JSON.parse(
@@ -34,7 +35,11 @@ export async function getStaticProps(context) {
         return {
             props: { ...doc },
         };
-    } catch (err) {}
+    } catch (err) {
+        return {
+            notFound: true
+        }
+    }
 }
 
 export default Offer;

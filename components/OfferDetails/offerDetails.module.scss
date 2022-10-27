@@ -4,6 +4,21 @@
     width: 100%;
     margin-top: 1rem;
 
+    &__button {
+        padding: 0.6rem;
+        border: 0;
+
+        &--edit {
+            background-color: variables.$primary-color;
+            color: variables.$quaternary-color;
+        }
+
+        &--remove {
+            background-color: variables.$secondary-color;
+            margin-left: 0.6rem;
+        }
+    }
+
     &__price,
     &__description,
     &__location {
@@ -15,6 +30,7 @@
     }
 
     &__name {
+        margin-top: 2rem;
         color: variables.$primary-color;
         font-size: 2rem;
 

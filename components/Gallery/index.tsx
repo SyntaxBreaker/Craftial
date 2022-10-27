@@ -42,7 +42,7 @@ function Gallery() {
                 <>
                     <Image
                         src={
-                            images.find((image) => imageIndex === image.id)?.url
+                            images.find((image) => imageIndex === image.id)!.url
                         }
                         alt=""
                         width="150px"

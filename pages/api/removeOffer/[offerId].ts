@@ -1,14 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import connectToMongoDB from "../../../utils/mongoDB";
-import Offer from "../../../models/offer";
+import offer from "../../../models/offer";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     (async () => {
         try {
+            const { offerId } = req.query;
             await connectToMongoDB();
-
-            const offer = new Offer(req.body);
-            await offer.save();
+            await offer.findOneAndRemove({ _id: offerId });
         } catch (err) {
             console.log(err);
         }

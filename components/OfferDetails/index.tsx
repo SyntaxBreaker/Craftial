@@ -1,6 +1,8 @@
+import { useRouter } from "next/router";
 import styles from "./offerDetails.module.scss";
 import Image from "next/image";
 import { IOffer } from "../../types";
+import { useUser } from "@auth0/nextjs-auth0";
 
 function OfferDetails({
     _id,
@@ -11,8 +13,31 @@ function OfferDetails({
     phoneNumber,
     description,
 }: IOffer) {
+    const { user, error, isLoading } = useUser();
+    const router = useRouter();
+
+    function removeOffer() {
+        fetch(`api/removeOffer/${_id}`)
+        router.push("/");
+    };
+
     return (
         <div className={styles["offer-details"]}>
+            {user?.email === email && (
+                <button
+                    className={`${styles["offer-details__button"]} ${styles["offer-details__button--edit"]}`}
+                >
+                    Edit offer
+                </button>
+            )}
+            {user?.email === email && (
+                <button
+                    className={`${styles["offer-details__button"]} ${styles["offer-details__button--remove"]}`}
+                    onClick={removeOffer}
+                >
+                    Remove offer
+                </button>
+            )}
             <h2 className={styles["offer-details__name"]}>{name}</h2>
             <p
                 className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
