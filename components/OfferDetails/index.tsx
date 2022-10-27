@@ -17,7 +17,9 @@ function OfferDetails({
     const router = useRouter();
 
     function removeOffer() {
-        fetch(`api/removeOffer/${_id}`)
+        fetch(`api/removeOffer/${_id}`, {
+            method: 'DELETE'
+        })
         router.push("/");
     };
 
