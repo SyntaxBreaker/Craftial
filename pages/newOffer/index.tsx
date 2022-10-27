@@ -1,19 +1,11 @@
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 import { useRouter } from "next/router";
-import styles from "./newOffer.module.scss";
-import {withPageAuthRequired} from '@auth0/nextjs-auth0'
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import Form from "../../components/Form";
+import { IForm } from "../../types";
 
-interface IOffer {
-    name: string;
-    location: string;
-    price: string;
-    email: string;
-    phoneNumber: string;
-    description: string;
-}
-
-export default withPageAuthRequired(function NewOffer({user}) {
-    const [offer, setOffer] = useState<IOffer>({
+export default withPageAuthRequired(function NewOffer({ user }) {
+    const [offer, setOffer] = useState<IForm>({
         name: "",
         location: "",
         price: "",
@@ -53,77 +45,10 @@ export default withPageAuthRequired(function NewOffer({user}) {
     };
 
     return (
-        <section className={styles["new-offer"]}>
-            <h2>Create a new offer</h2>
-            <form onSubmit={handleSubmit} className={styles["new-offer__form"]}>
-                <div className={styles["new-offer__item"]}>
-                    <label htmlFor="name">Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        className={styles["new-offer__input"]}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles["new-offer__item"]}>
-                    <label htmlFor="price">Price</label>
-                    <input
-                        type="text"
-                        name="price"
-                        id="price"
-                        className={styles["new-offer__input"]}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles["new-offer__item"]}>
-                    <label htmlFor="location">Location</label>
-                    <input
-                        type="text"
-                        name="location"
-                        id="location"
-                        className={styles["new-offer__input"]}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div
-                    className={styles["new-offer__item"]}
-                >
-                    <label htmlFor="phoneNumber">Phone number</label>
-                    <input
-                        type="text"
-                        name="phoneNumber"
-                        id="phoneNumber"
-                        className={styles["new-offer__input"]}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div
-                    className={`${styles["new-offer__item"]} ${styles["new-offer__item--full-width"]}`}
-                >
-                    <label htmlFor="description">Description</label>
-                    <textarea
-                        name="description"
-                        id="description"
-                        rows={12}
-                        cols={12}
-                        className={`${styles["new-offer__input"]} ${styles["new-offer__input--textarea"]}`}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className={styles["new-offer__item"]}>
-                    <input
-                        type="submit"
-                        value="Create"
-                        className={`${styles["new-offer__input"]} ${styles["new-offer__input--submit"]}`}
-                    />
-                </div>
-            </form>
-        </section>
+        <Form
+            title="Create a new offer"
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+        />
     );
 });

@@ -7,16 +7,21 @@
     &__button {
         padding: 0.6rem;
         border: 0;
+        font-size: 1rem;
 
         &--edit {
             background-color: variables.$primary-color;
-            color: variables.$quaternary-color;
         }
 
         &--remove {
             background-color: variables.$secondary-color;
             margin-left: 0.6rem;
         }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: variables.$quaternary-color;
     }
 
     &__price,

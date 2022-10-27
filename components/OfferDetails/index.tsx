@@ -3,6 +3,7 @@ import styles from "./offerDetails.module.scss";
 import Image from "next/image";
 import { IOffer } from "../../types";
 import { useUser } from "@auth0/nextjs-auth0";
+import Link from "next/link";
 
 function OfferDetails({
     _id,
@@ -18,19 +19,21 @@ function OfferDetails({
 
     function removeOffer() {
         fetch(`api/removeOffer/${_id}`, {
-            method: 'DELETE'
-        })
+            method: "DELETE",
+        });
         router.push("/");
-    };
+    }
 
     return (
         <div className={styles["offer-details"]}>
             {user?.email === email && (
-                <button
-                    className={`${styles["offer-details__button"]} ${styles["offer-details__button--edit"]}`}
-                >
-                    Edit offer
-                </button>
+                <Link href={`/editOffer/${_id}`}>
+                    <a
+                        className={`${styles["offer-details__link"]} ${styles["offer-details__button"]} ${styles["offer-details__button--edit"]}`}
+                    >
+                        Edit offer
+                    </a>
+                </Link>
             )}
             {user?.email === email && (
                 <button

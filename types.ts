@@ -12,3 +12,12 @@ export interface IOffer {
 export interface IOffers {
     offers: IOffer[];
 }
+
+export interface IForm {
+    name: string;
+    location: string;
+    price: string;
+    email: string;
+    phoneNumber: string;
+    description: string;
+}
