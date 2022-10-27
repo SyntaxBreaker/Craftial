@@ -1,7 +1,13 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
+import { useUser } from "@auth0/nextjs-auth0";
 
 function Header() {
+    const { user, error, isLoading } = useUser();
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>{error.message}</div>;
+
     return (
         <header className={styles["header"]}>
             <h1 className={styles["header__logo"]}>
@@ -30,9 +36,26 @@ function Header() {
                 <span className={styles["account__item"]}>
                     <p>💙</p>
                 </span>
-                <span className={styles["account__item"]}>
-                    <p>🧔</p>
-                </span>
+                {user ? (
+                    <>
+                        <span className={styles["account__item"]}>
+                            <p>🧔</p>
+                        </span>
+                        <a
+                            href="/api/auth/logout"
+                            className={styles["account__link"]}
+                        >
+                            Logout
+                        </a>
+                    </>
+                ) : (
+                    <a
+                        href="/api/auth/login"
+                        className={styles["account__link"]}
+                    >
+                        Login
+                    </a>
+                )}
             </div>
         </header>
     );
