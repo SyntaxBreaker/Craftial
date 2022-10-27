@@ -12,13 +12,17 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
         name: offerToEdit.name,
         location: offerToEdit.location,
         price: offerToEdit.price,
-        email: user.email as string,
+        email: offerToEdit.email,
         phoneNumber: offerToEdit.phoneNumber,
         description: offerToEdit.description,
     });
 
     const router = useRouter();
     const { offerId } = router.query;
+
+    useEffect(() => {
+        user.email !== offer.email && router.push(`/${offerId}`);
+    }, []);
 
     const handleChange = (
         event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -65,8 +69,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         const doc = JSON.parse(
             JSON.stringify(await offer.findById({ _id: offerId }).exec())
         );
-
-        console.log(doc);
 
         return {
             props: {

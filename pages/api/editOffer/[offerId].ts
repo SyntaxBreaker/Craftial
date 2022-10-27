@@ -13,3 +13,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         }
     })();
 }
+
+export const config = {
+    api: {
+        externalResolver: true,
+    },
+};
