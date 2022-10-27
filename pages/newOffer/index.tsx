@@ -1,6 +1,7 @@
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./newOffer.module.scss";
+import {withPageAuthRequired} from '@auth0/nextjs-auth0'
 
 interface IOffer {
     name: string;
@@ -11,12 +12,12 @@ interface IOffer {
     description: string;
 }
 
-function NewOffer() {
+export default withPageAuthRequired(function NewOffer({user}) {
     const [offer, setOffer] = useState<IOffer>({
         name: "",
         location: "",
         price: "",
-        email: "",
+        email: user.email as string,
         phoneNumber: "",
         description: "",
     });
@@ -88,19 +89,8 @@ function NewOffer() {
                         required
                     />
                 </div>
-                <div className={styles["new-offer__item"]}>
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="text"
-                        name="email"
-                        id="email"
-                        className={styles["new-offer__input"]}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
                 <div
-                    className={`${styles["new-offer__item"]} ${styles["new-offer__item--full-width"]}`}
+                    className={styles["new-offer__item"]}
                 >
                     <label htmlFor="phoneNumber">Phone number</label>
                     <input
@@ -136,6 +126,4 @@ function NewOffer() {
             </form>
         </section>
     );
-}
-
-export default NewOffer;
+});
