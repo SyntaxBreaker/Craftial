@@ -21,7 +21,7 @@
 
 `npm install`
 
-`Create a .env file and enter your MONGODB_URI, for example: MONGODB_URI='your_MONGODB_URI'`
+`Change the file from .env.example to .env and then fill it with data`
 
 `npm run dev.`
 
