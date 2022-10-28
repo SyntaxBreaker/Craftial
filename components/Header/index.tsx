@@ -5,9 +5,6 @@ import { useUser } from "@auth0/nextjs-auth0";
 function Header() {
     const { user, error, isLoading } = useUser();
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{error.message}</div>;
-
     return (
         <header className={styles["header"]}>
             <h1 className={styles["header__logo"]}>
