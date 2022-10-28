@@ -35,9 +35,6 @@ function Header() {
                 </span>
                 {user ? (
                     <>
-                        <span className={styles["account__item"]}>
-                            <p>🧔</p>
-                        </span>
                         <Link href="/api/auth/logout">
                             <a className={styles["account__link"]}>Logout</a>
                         </Link>

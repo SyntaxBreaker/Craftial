@@ -3,7 +3,7 @@
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background-color: variables.$primary-color;
@@ -24,9 +24,11 @@
 
     .form {
         position: relative;
+        width: 50%;
 
         &__input {
             padding: 0.4rem 3rem 0.4rem 0.5rem;
+            width: 100%;
 
             &:focus {
                 outline: none;
@@ -42,17 +44,21 @@
                 border-left: 1px solid variables.$tertiary-color;
             }
         }
+
+        @media screen and (min-width: 768px) {
+            width: 40%;
+        }
+
+        @media screen and (min-width: 1440px) {
+            width: 25%;
+        }
     }
 
     .account {
-        display: none;
-
-        @media screen and (min-width: 768px) {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            align-items: center;
-        }
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem;
+        align-items: center;
 
         &__item {
             border-radius: 50%;
@@ -64,9 +70,5 @@
             text-decoration: none;
             color: white;
         }
-    }
-
-    @media screen and (min-width: 768px) {
-        justify-content: space-between;
     }
 }
