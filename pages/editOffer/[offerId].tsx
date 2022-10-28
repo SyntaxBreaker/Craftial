@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import connectToMongoDB from "../../utils/mongoDB";
 import offer from "../../models/offer";
 import { GetServerSidePropsContext } from "next";
-import { handleChange, handleSubmit } from "../../utils/form";
+import { handleChange, handleSubmit } from "../../utils/formController";
 
 export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
     const [offer, setOffer] = useState<IForm>({
