@@ -1,11 +1,12 @@
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import { useState, ChangeEvent, SyntheticEvent, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Form from "../../components/Form";
 import { IForm } from "../../types";
 import { useRouter } from "next/router";
 import connectToMongoDB from "../../utils/mongoDB";
 import offer from "../../models/offer";
 import { GetServerSidePropsContext } from "next";
+import { handleChange, handleSubmit } from "../../utils/form";
 
 export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
     const [offer, setOffer] = useState<IForm>({
@@ -24,39 +25,25 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
         user.email !== offer.email && router.push(`/${offerId}`);
     }, []);
 
-    const handleChange = (
-        event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        setOffer({
-            ...offer,
-            [name]: value,
-        });
-    };
-
-    const handleSubmit = (event: SyntheticEvent) => {
-        event.preventDefault();
-
-        fetch(`/api/editOffer/${offerId}`, {
-            method: "PUT",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(offer),
-        })
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err));
-
-        router.push("/");
-    };
-
     return (
         <Form
             title="Edit the offer"
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            handleChange={(event) => handleChange(event, offer, setOffer)}
+            handleSubmit={(event) =>
+                handleSubmit(
+                    event,
+                    `/api/editOffer/${offerId}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            Accept: "application/json",
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(offer),
+                    },
+                    router
+                )
+            }
             offer={offer}
         />
     );
