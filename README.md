@@ -13,6 +13,7 @@
 - SASS
 - Typescript
 - Mongoose
+- Auth0
 
 
 ## Getting started
