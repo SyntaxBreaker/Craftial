@@ -1,9 +1,8 @@
-import { useRouter } from "next/router";
 import OfferLayout from "../../components/OfferLayout";
 import { IOffer } from "../../types";
 import connectToMongoDB from "../../utils/mongoDB";
 import offer from "../../models/offer";
-import { GetStaticPathsContext, GetStaticPathsResult, GetStaticPropsContext } from "next";
+import { GetStaticPropsContext } from "next";
 
 function Offer(offer: IOffer) {
     return <OfferLayout {...offer} />;
