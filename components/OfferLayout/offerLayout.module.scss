@@ -1,7 +1,26 @@
+@use "../../utils/variables";
+
 .offer-layout {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+
+    &__loading {
+        margin: 3rem auto;
+        animation: scale 1s linear infinite;
+        color: variables.$primary-color;
+        font-weight: 900;
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(2);
+            }
+        }
+    }
 
     @media screen and (min-width: 768px) {
         margin: 0 auto;
