@@ -4,6 +4,7 @@ import Image from "next/image";
 import { IOffer } from "../../types";
 import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
+import { useState } from "react";
 
 function OfferDetails({
     _id,
@@ -22,6 +23,18 @@ function OfferDetails({
             method: "DELETE",
         });
         router.push("/");
+    }
+
+    function handleFavorites() {
+        let favoritesList =
+            JSON.parse(localStorage.getItem("favorites") || "[]");
+        if (favoritesList.includes(_id)) {
+            favoritesList.splice(favoritesList.indexOf(_id), 1);
+            localStorage.setItem("favorites", JSON.stringify(favoritesList));
+        } else {
+            favoritesList.push(_id);
+            localStorage.setItem("favorites", JSON.stringify(favoritesList));
+        }
     }
 
     return (
@@ -43,6 +56,12 @@ function OfferDetails({
                     Remove offer
                 </button>
             )}
+            <button
+                className={`${styles["offer-details__button"]} ${styles["offer-details__button--favorite"]}`}
+                onClick={handleFavorites}
+            >
+                🧡
+            </button>
             <h2 className={styles["offer-details__name"]}>{name}</h2>
             <p
                 className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
