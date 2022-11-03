@@ -1,4 +1,13 @@
 .favorites {
     margin-top: 1rem;
     text-align: center;
+
+    .offers {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
 }

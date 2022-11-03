@@ -31,7 +31,9 @@ function Header() {
                     </Link>
                 </span>
                 <span className={styles["account__item"]}>
-                    <p>💙</p>
+                    <Link href="/favorites">
+                        <a className={styles["account__link"]}>💙</a>
+                    </Link>
                 </span>
                 {user ? (
                     <>
