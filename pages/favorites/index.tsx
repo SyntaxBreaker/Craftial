@@ -18,22 +18,26 @@ function Favorites() {
                 const response = await fetch(`api/favorites?ids=${offerID}`);
                 const offers = await response.json();
                 setFavoriteOffers(offers);
-                setIsLoading(false);
             } catch (err) {
                 console.log(err);
             }
         }
 
         fetchData();
+        setIsLoading(false);
     }, []);
 
     return (
         <section className={styles["favorites"]}>
             <h2>Favorites</h2>
             {isLoading ? (
-                <p>Please be patient, loading...</p>
+                <p className={styles["favorites__loading"]}>
+                    Please be patient, loading...
+                </p>
             ) : !favoriteOffers ? (
-                <p>There are no favorite offers.</p>
+                <p className={styles["favorites__info"]}>
+                    There are no favorite offers.
+                </p>
             ) : (
                 <div className={styles["offers"]}>
                     {favoriteOffers?.map((offer) => (

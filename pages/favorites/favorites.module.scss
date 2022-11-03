@@ -1,6 +1,21 @@
+@use "../../utils/variables";
+
 .favorites {
-    margin-top: 1rem;
+    margin: 2rem 0;
     text-align: center;
+
+    &__loading {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: variables.$tertiary-color;
+        animation: pulse 3s infinite;
+    }
+
+    &__info {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: variables.$tertiary-color;
+    }
 
     .offers {
         display: flex;
@@ -9,5 +24,19 @@
         justify-content: center;
         gap: 1.5rem;
         margin-top: 1rem;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.75);
+        }
+
+        50% {
+            transform: scale(1.25);
+        }
+
+        100% {
+            transform: scale(0.75);
+        }
     }
 }
