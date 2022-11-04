@@ -12,18 +12,6 @@ function Header() {
                     <a className={styles["header__link"]}>Craftial</a>
                 </Link>
             </h1>
-            <form className={styles["form"]}>
-                <input
-                    type="search"
-                    placeholder="Search for..."
-                    className={styles["form__input"]}
-                />
-                <input
-                    type="submit"
-                    value="🔍"
-                    className={styles["form__input--submit"]}
-                />
-            </form>
             <div className={styles["account"]}>
                 <span className={styles["account__item"]}>
                     <Link href="/newOffer">

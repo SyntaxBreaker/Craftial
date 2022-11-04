@@ -9,49 +9,9 @@
     background-color: variables.$primary-color;
     color: variables.$quaternary-color;
 
-    &__logo {
-        display: none;
-
-        @media screen and (min-width: 768px) {
-            display: initial;
-        }
-    }
-
     &__link {
         color: variables.$quaternary-color;
         text-decoration: none;
-    }
-
-    .form {
-        position: relative;
-        width: 50%;
-
-        &__input {
-            padding: 0.4rem 3rem 0.4rem 0.5rem;
-            width: 100%;
-
-            &:focus {
-                outline: none;
-            }
-
-            &--submit {
-                position: absolute;
-                height: 2rem;
-                right: 0;
-                padding: 0.5rem;
-                border: none;
-                background-color: transparent;
-                border-left: 1px solid variables.$tertiary-color;
-            }
-        }
-
-        @media screen and (min-width: 768px) {
-            width: 40%;
-        }
-
-        @media screen and (min-width: 1440px) {
-            width: 25%;
-        }
     }
 
     .account {
