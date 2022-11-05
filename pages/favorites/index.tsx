@@ -3,6 +3,7 @@ import styles from "./favorites.module.scss";
 import Card from "../../components/Card";
 import { IOffer } from "../../types";
 import SearchBox from "../../components/SearchBox";
+import Head from "next/head";
 
 function Favorites() {
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -34,39 +35,44 @@ function Favorites() {
     }, []);
 
     return (
-        <section className={styles["favorites"]}>
-            <h2>Favorites</h2>
-            {isLoading ? (
-                <p className={styles["favorites__loading"]}>
-                    Please be patient, loading...
-                </p>
-            ) : !favoriteOffers ? (
-                <p className={styles["favorites__info"]}>
-                    There are no favorite offers.
-                </p>
-            ) : (
-                <>
-                    <SearchBox
-                        offers={favoriteOffers}
-                        setFilteredOffers={setFilteredOffers}
-                        setIsFiltered={setIsFiltered}
-                    />
-                    {filteredOffers && isFiltered ? (
-                        <div className={styles["offers"]}>
-                            {filteredOffers.map((offer) => (
-                                <Card {...offer} key={offer._id} />
-                            ))}
-                        </div>
-                    ) : (
-                        <div className={styles["offers"]}>
-                            {favoriteOffers?.map((offer) => (
-                                <Card {...offer} key={offer._id} />
-                            ))}
-                        </div>
-                    )}
-                </>
-            )}
-        </section>
+        <>
+            <Head>
+                <title>Favorite offers</title>
+            </Head>
+            <section className={styles["favorites"]}>
+                <h2>Favorites</h2>
+                {isLoading ? (
+                    <p className={styles["favorites__loading"]}>
+                        Please be patient, loading...
+                    </p>
+                ) : !favoriteOffers ? (
+                    <p className={styles["favorites__info"]}>
+                        There are no favorite offers.
+                    </p>
+                ) : (
+                    <>
+                        <SearchBox
+                            offers={favoriteOffers}
+                            setFilteredOffers={setFilteredOffers}
+                            setIsFiltered={setIsFiltered}
+                        />
+                        {filteredOffers && isFiltered ? (
+                            <div className={styles["offers"]}>
+                                {filteredOffers.map((offer) => (
+                                    <Card {...offer} key={offer._id} />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className={styles["offers"]}>
+                                {favoriteOffers?.map((offer) => (
+                                    <Card {...offer} key={offer._id} />
+                                ))}
+                            </div>
+                        )}
+                    </>
+                )}
+            </section>
+        </>
     );
 }
 

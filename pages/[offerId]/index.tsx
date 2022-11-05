@@ -3,9 +3,17 @@ import { IOffer } from "../../types";
 import connectToMongoDB from "../../utils/mongoDB";
 import offer from "../../models/offer";
 import { GetStaticPropsContext } from "next";
+import Head from "next/head";
 
 function Offer(offer: IOffer) {
-    return <OfferLayout {...offer} />;
+    return (
+        <>
+            <Head>
+                <title>{offer.name}</title>
+            </Head>
+            <OfferLayout {...offer} />
+        </>
+    );
 }
 
 export const getStaticPaths = () => {
@@ -36,8 +44,8 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         };
     } catch (err) {
         return {
-            notFound: true
-        }
+            notFound: true,
+        };
     }
 }
 

@@ -7,6 +7,7 @@ import connectToMongoDB from "../../utils/mongoDB";
 import offer from "../../models/offer";
 import { GetServerSidePropsContext } from "next";
 import { handleChange, handleSubmit } from "../../utils/formController";
+import Head from "next/head";
 
 export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
     const [offer, setOffer] = useState<IForm>({
@@ -26,26 +27,31 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
     }, []);
 
     return (
-        <Form
-            title="Edit the offer"
-            handleChange={(event) => handleChange(event, offer, setOffer)}
-            handleSubmit={(event) =>
-                handleSubmit(
-                    event,
-                    `/api/editOffer/${offerId}`,
-                    {
-                        method: "PUT",
-                        headers: {
-                            Accept: "application/json",
-                            "Content-Type": "application/json",
+        <>
+            <Head>
+                <title>Edit the offer</title>
+            </Head>
+            <Form
+                title="Edit the offer"
+                handleChange={(event) => handleChange(event, offer, setOffer)}
+                handleSubmit={(event) =>
+                    handleSubmit(
+                        event,
+                        `/api/editOffer/${offerId}`,
+                        {
+                            method: "PUT",
+                            headers: {
+                                Accept: "application/json",
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(offer),
                         },
-                        body: JSON.stringify(offer),
-                    },
-                    router
-                )
-            }
-            offer={offer}
-        />
+                        router
+                    )
+                }
+                offer={offer}
+            />
+        </>
     );
 });
 
