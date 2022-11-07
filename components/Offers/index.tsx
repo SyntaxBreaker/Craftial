@@ -17,12 +17,16 @@ function Offers({ offers }: IOffers) {
                 setIsFiltered={setIsFiltered}
             />
             <div className={styles["offers"]}>
-                {filteredOffers && isFiltered ? (
-                    <>
-                        {filteredOffers?.map((offer) => (
-                            <Card {...offer} key={offer._id} />
-                        ))}
-                    </>
+                {isFiltered && filteredOffers ? (
+                    filteredOffers.length > 0 ? (
+                        <>
+                            {filteredOffers?.map((offer) => (
+                                <Card {...offer} key={offer._id} />
+                            ))}
+                        </>
+                    ) : (
+                        <p>There are no filtered offers.</p>
+                    )
                 ) : (
                     <>
                         {offers.map((offer) => (

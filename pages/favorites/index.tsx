@@ -56,12 +56,16 @@ function Favorites() {
                             setFilteredOffers={setFilteredOffers}
                             setIsFiltered={setIsFiltered}
                         />
-                        {filteredOffers && isFiltered ? (
-                            <div className={styles["offers"]}>
-                                {filteredOffers.map((offer) => (
-                                    <Card {...offer} key={offer._id} />
-                                ))}
-                            </div>
+                        {isFiltered && filteredOffers ? (
+                            filteredOffers.length > 0 ? (
+                                <div className={styles["offers"]}>
+                                    {filteredOffers.map((offer) => (
+                                        <Card {...offer} key={offer._id} />
+                                    ))}
+                                </div>
+                            ) : (
+                                <p>There are no filtered offers.</p>
+                            )
                         ) : (
                             <div className={styles["offers"]}>
                                 {favoriteOffers?.map((offer) => (
