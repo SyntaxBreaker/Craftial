@@ -1,8 +1,8 @@
-import Categories from "../components/Categories";
-import Offers from "../components/Offers";
-import connectToMongoDB from "../utils/mongoDB";
-import offer from "../models/offer";
-import { IOffers } from "../types";
+import Categories from "components/Categories";
+import Offers from "components/Offers";
+import connectToMongoDB from "utils/mongoDB";
+import offer from "models/offer";
+import { IOffers } from "types";
 import Head from "next/head";
 
 function Home({ offers }: IOffers) {

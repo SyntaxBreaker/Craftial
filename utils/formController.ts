@@ -1,9 +1,9 @@
-import { IForm } from "../types";
+import { IForm } from "types";
 
 export const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     offer: IForm,
-    setOffer: React.Dispatch<React.SetStateAction<IForm>>,
+    setOffer: React.Dispatch<React.SetStateAction<IForm>>
 ) => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -14,11 +14,11 @@ export const handleChange = (
 };
 
 export const handleSubmit = (
-    event: React.SyntheticEvent, 
+    event: React.SyntheticEvent,
     URL: string,
     options: object,
     router: any
-    ) => {
+) => {
     event.preventDefault();
 
     fetch(URL, options)

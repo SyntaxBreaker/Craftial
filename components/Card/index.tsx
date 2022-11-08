@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IOffer } from "../../types";
+import { IOffer } from "types";
 import styles from "./card.module.scss";
 
 function Card(offer: IOffer) {

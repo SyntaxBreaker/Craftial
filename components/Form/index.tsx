@@ -1,5 +1,5 @@
-import styles from "../../utils/form.module.scss";
-import { IForm } from "../../types";
+import styles from "utils/form.module.scss";
+import { IForm } from "types";
 
 interface IOffer {
     title: string;

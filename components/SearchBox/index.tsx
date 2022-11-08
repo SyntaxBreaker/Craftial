@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./search.module.scss";
-import { IOffer } from "../../types";
+import { IOffer } from "types";
 
 interface IProps {
     offers: IOffer[];

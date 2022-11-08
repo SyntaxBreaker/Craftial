@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import connectToMongoDB from "../../../utils/mongoDB";
-import offer from "../../../models/offer";
+import connectToMongoDB from "utils/mongoDB";
+import offer from "models/offer";
 
 export default async function handler(
     req: NextApiRequest,

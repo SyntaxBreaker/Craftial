@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-import Form from "../../components/Form";
-import { IForm } from "../../types";
-import { handleChange, handleSubmit } from "../../utils/formController";
+import Form from "components/Form";
+import { IForm } from "types";
+import { handleChange, handleSubmit } from "utils/formController";
 import Head from "next/head";
 
 export default withPageAuthRequired(function NewOffer({ user }) {

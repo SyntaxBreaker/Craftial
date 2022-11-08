@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IOffer } from "../types";
+import { IOffer } from "types";
 
 const Schema = mongoose.Schema;
 

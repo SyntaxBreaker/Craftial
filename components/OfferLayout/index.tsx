@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Gallery from "../Gallery";
-import OfferDetails from "../OfferDetails";
+import Gallery from "components/Gallery";
+import OfferDetails from "components/OfferDetails";
 import styles from "./offerLayout.module.scss";
-import { IOffer } from "../../types";
+import { IOffer } from "types";
 
 function OfferLayout(offer: IOffer) {
     const [isLoading, setIsLoading] = useState<boolean>(true);

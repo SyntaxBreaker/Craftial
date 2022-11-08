@@ -1,7 +1,7 @@
-import OfferLayout from "../../components/OfferLayout";
-import { IOffer } from "../../types";
-import connectToMongoDB from "../../utils/mongoDB";
-import offer from "../../models/offer";
+import OfferLayout from "components/OfferLayout";
+import { IOffer } from "types";
+import connectToMongoDB from "utils/mongoDB";
+import offer from "models/offer";
 import { GetStaticPropsContext } from "next";
 import Head from "next/head";
 

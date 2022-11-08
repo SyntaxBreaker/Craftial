@@ -1,4 +1,4 @@
-import Header from "../Header";
+import Header from "components/Header";
 import Head from "next/head";
 
 function Layout({ children }: { children: JSX.Element }) {

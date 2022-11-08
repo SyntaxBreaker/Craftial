@@ -1,12 +1,12 @@
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { useState, useEffect } from "react";
-import Form from "../../components/Form";
-import { IForm } from "../../types";
+import Form from "components/Form";
+import { IForm } from "types";
 import { useRouter } from "next/router";
-import connectToMongoDB from "../../utils/mongoDB";
-import offer from "../../models/offer";
+import connectToMongoDB from "utils/mongoDB";
+import offer from "models/offer";
 import { GetServerSidePropsContext } from "next";
-import { handleChange, handleSubmit } from "../../utils/formController";
+import { handleChange, handleSubmit } from "utils/formController";
 import Head from "next/head";
 
 export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {

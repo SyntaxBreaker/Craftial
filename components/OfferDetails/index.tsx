@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import styles from "./offerDetails.module.scss";
 import Image from "next/image";
-import { IOffer } from "../../types";
+import { IOffer } from "types";
 import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
 import { useState } from "react";
@@ -26,14 +26,15 @@ function OfferDetails({
     }
 
     function handleFavorites() {
-        let favoritesList =
-            JSON.parse(localStorage.getItem("favorites") || "[]");
-        if (favoritesList.includes(_id)) {
-            favoritesList.splice(favoritesList.indexOf(_id), 1);
-            localStorage.setItem("favorites", JSON.stringify(favoritesList));
+        let favoriteList = JSON.parse(
+            localStorage.getItem("favorites") || "[]"
+        );
+        if (favoriteList.includes(_id)) {
+            favoriteList.splice(favoriteList.indexOf(_id), 1);
+            localStorage.setItem("favorites", JSON.stringify(favoriteList));
         } else {
-            favoritesList.push(_id);
-            localStorage.setItem("favorites", JSON.stringify(favoritesList));
+            favoriteList.push(_id);
+            localStorage.setItem("favorites", JSON.stringify(favoriteList));
         }
     }
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./offers.module.scss";
 import { IOffers, IOffer } from "../../types";
-import Card from "../Card";
-import SearchBox from "../SearchBox";
+import Card from "components/Card";
+import SearchBox from "components/SearchBox";
 
 function Offers({ offers }: IOffers) {
     const [filteredOffers, setFilteredOffers] = useState<null | IOffer[]>(null);
