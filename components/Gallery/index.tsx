@@ -29,10 +29,11 @@ function Gallery() {
     const [isMobile, setIsMobile] = useState<boolean>(false);
 
     useEffect(() => {
-        if (window.innerWidth > 720) {
-            setIsMobile(false);
-        } else {
-            setIsMobile(true);
+        const handleResizeWindow = () => window.innerWidth > 768 ? setIsMobile(false) : setIsMobile(true);
+        window.addEventListener('resize', handleResizeWindow);
+
+        return () => {
+            window.removeEventListener('resize', handleResizeWindow);
         }
     }, []);
 

@@ -7,8 +7,9 @@
     .gallery {
         &__button {
             position: absolute;
-            width: 75px;
-            background-color: transparent;
+            width: 12vmin;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .25);
             top: 50%;
             transform: translateY(-50%);
             border: 0;
