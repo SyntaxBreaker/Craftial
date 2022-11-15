@@ -3,8 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['cdn.pixabay.com']
+    domains: ['cdn.pixabay.com', 'i.ibb.co']
   },
+  env: {
+    IMGBB_API_KEY: process.env.IMGBB_API_KEY
+  }
 }
 
 module.exports = nextConfig

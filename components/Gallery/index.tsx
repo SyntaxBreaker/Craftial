@@ -3,38 +3,20 @@ import { useState, useEffect, Fragment } from "react";
 import Image from "next/image";
 import ArrowLeft from "public/arrow-left.svg";
 import ArrowRight from "public/arrow-right.svg";
+import { IImages } from "types";
 
-interface IImage {
-    id: number;
-    url: string;
-}
-
-const images: IImage[] = [
-    {
-        id: 0,
-        url: "https://cdn.pixabay.com/photo/2022/10/16/13/53/early-morning-7525151_960_720.jpg",
-    },
-    {
-        id: 1,
-        url: "https://cdn.pixabay.com/photo/2022/08/26/04/19/beach-7411683_960_720.jpg",
-    },
-    {
-        id: 2,
-        url: "https://cdn.pixabay.com/photo/2022/10/13/07/54/crane-houses-7518536_960_720.jpg",
-    },
-];
-
-function Gallery() {
+function Gallery({ images }: IImages) {
     const [imageIndex, setImageIndex] = useState<number>(0);
     const [isMobile, setIsMobile] = useState<boolean>(false);
 
     useEffect(() => {
-        const handleResizeWindow = () => window.innerWidth > 768 ? setIsMobile(false) : setIsMobile(true);
-        window.addEventListener('resize', handleResizeWindow);
+        const handleResizeWindow = () =>
+            window.innerWidth > 768 ? setIsMobile(false) : setIsMobile(true);
+        window.addEventListener("resize", handleResizeWindow);
 
         return () => {
-            window.removeEventListener('resize', handleResizeWindow);
-        }
+            window.removeEventListener("resize", handleResizeWindow);
+        };
     }, []);
 
     return (
@@ -42,9 +24,7 @@ function Gallery() {
             {isMobile ? (
                 <>
                     <Image
-                        src={
-                            images.find((image) => imageIndex === image.id)!.url
-                        }
+                        src={images[imageIndex].url}
                         alt=""
                         width="150px"
                         height="150px"
@@ -90,7 +70,7 @@ function Gallery() {
                 </>
             ) : (
                 <>
-                    {images.map((image, index) => (
+                    {images.map((image) => (
                         <Fragment key={image.id}>
                             <Image
                                 src={image.url}

@@ -17,6 +17,7 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
         email: offerToEdit.email,
         phoneNumber: offerToEdit.phoneNumber,
         description: offerToEdit.description,
+        images: [],
     });
 
     const router = useRouter();
@@ -44,7 +45,7 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
                                 Accept: "application/json",
                                 "Content-Type": "application/json",
                             },
-                            body: JSON.stringify(offer),
+                            body: offer,
                         },
                         router
                     )

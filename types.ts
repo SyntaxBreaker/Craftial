@@ -7,6 +7,7 @@ export interface IOffer {
     phoneNumber: string;
     description: string;
     createdAt: string;
+    images: IImage[];
 }
 
 export interface IOffers {
@@ -20,4 +21,24 @@ export interface IForm {
     email: string;
     phoneNumber: string;
     description: string;
+    images: string[];
+}
+
+export interface IImage {
+    _id?: string;
+    id: string;
+    url: string;
+}
+
+export interface IImages {
+    images: IImage[];
+}
+
+export interface IOptions {
+    method: string;
+    headers: {
+        Accept: string;
+        "Content-Type": string;
+    };
+    body: any;
 }

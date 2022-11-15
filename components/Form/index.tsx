@@ -69,6 +69,20 @@ function Form({ title, handleChange, handleSubmit, offer }: IOffer) {
                 <div
                     className={`${styles["form-container__item"]} ${styles["form-container__item--full-width"]}`}
                 >
+                    <label htmlFor="images">images</label>
+                    <input
+                        name="images"
+                        id="images"
+                        type="file"
+                        multiple={true}
+                        className={`${styles["form-container__input"]} ${styles["form-container__input--textarea"]}`}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div
+                    className={`${styles["form-container__item"]} ${styles["form-container__item--full-width"]}`}
+                >
                     <label htmlFor="description">Description</label>
                     <textarea
                         name="description"

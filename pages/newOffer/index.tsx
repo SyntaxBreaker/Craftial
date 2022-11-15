@@ -14,6 +14,7 @@ export default withPageAuthRequired(function NewOffer({ user }) {
         email: user.email as string,
         phoneNumber: "",
         description: "",
+        images: [],
     });
 
     const router = useRouter();
@@ -36,7 +37,7 @@ export default withPageAuthRequired(function NewOffer({ user }) {
                                 Accept: "application/json",
                                 "Content-Type": "application/json",
                             },
-                            body: JSON.stringify(offer),
+                            body: offer,
                         },
                         router
                     )

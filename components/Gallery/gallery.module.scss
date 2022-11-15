@@ -5,11 +5,15 @@
     gap: 1rem;
 
     .gallery {
+        &__image {
+            object-fit: contain;
+        }
+
         &__button {
             position: absolute;
             width: 12vmin;
             height: 100%;
-            background-color: rgba(0, 0, 0, .25);
+            background-color: rgba(0, 0, 0, 0.25);
             top: 50%;
             transform: translateY(-50%);
             border: 0;

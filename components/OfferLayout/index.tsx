@@ -21,7 +21,7 @@ function OfferLayout(offer: IOffer) {
                 </div>
             ) : (
                 <>
-                    <Gallery />
+                    <Gallery images={offer.images} />
                     <OfferDetails {...offer} />
                 </>
             )}
