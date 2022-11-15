@@ -45,35 +45,37 @@ function Favorites() {
                     <p className={styles["favorites__loading"]}>
                         Please be patient, loading...
                     </p>
-                ) : !favoriteOffers ? (
+                ) : favoriteOffers?.length === 0 ? (
                     <p className={styles["favorites__info"]}>
                         There are no favorite offers.
                     </p>
                 ) : (
-                    <>
-                        <SearchBox
-                            offers={favoriteOffers}
-                            setFilteredOffers={setFilteredOffers}
-                            setIsFiltered={setIsFiltered}
-                        />
-                        {isFiltered && filteredOffers ? (
-                            filteredOffers.length > 0 ? (
+                    favoriteOffers && (
+                        <>
+                            <SearchBox
+                                offers={favoriteOffers}
+                                setFilteredOffers={setFilteredOffers}
+                                setIsFiltered={setIsFiltered}
+                            />
+                            {isFiltered && filteredOffers ? (
+                                filteredOffers.length > 0 ? (
+                                    <div className={styles["offers"]}>
+                                        {filteredOffers.map((offer) => (
+                                            <Card {...offer} key={offer._id} />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p>There are no filtered offers.</p>
+                                )
+                            ) : (
                                 <div className={styles["offers"]}>
-                                    {filteredOffers.map((offer) => (
+                                    {favoriteOffers?.map((offer) => (
                                         <Card {...offer} key={offer._id} />
                                     ))}
                                 </div>
-                            ) : (
-                                <p>There are no filtered offers.</p>
-                            )
-                        ) : (
-                            <div className={styles["offers"]}>
-                                {favoriteOffers?.map((offer) => (
-                                    <Card {...offer} key={offer._id} />
-                                ))}
-                            </div>
-                        )}
-                    </>
+                            )}
+                        </>
+                    )
                 )}
             </section>
         </>
