@@ -52,7 +52,7 @@ export const handleSubmit = async (
         const imageURLs: IImage[] = [];
 
         for (let i = 0; i < images.length; i++) {
-            const image = images[i].replace("data:image/png;base64,", "");
+            const image = images[i].split(',')[1];
             const formData = new FormData();
             formData.set("key", `${process.env.IMGBB_API_KEY}`);
             formData.append("image", image);
