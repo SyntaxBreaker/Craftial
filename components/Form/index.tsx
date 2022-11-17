@@ -8,12 +8,18 @@ interface IOffer {
     ) => void;
     handleSubmit: (event: React.SyntheticEvent) => void;
     offer?: IForm;
+    isError: boolean;
 }
 
-function Form({ title, handleChange, handleSubmit, offer }: IOffer) {
+function Form({ title, handleChange, handleSubmit, offer, isError }: IOffer) {
     return (
         <section className={styles["form-container"]}>
             <h2>{title}</h2>
+            {isError && (
+                <p className={styles["form-container__error"]}>
+                    An error has occurred. Refill the form correctly.
+                </p>
+            )}
             <form
                 onSubmit={handleSubmit}
                 className={styles["form-container__form"]}
@@ -69,7 +75,7 @@ function Form({ title, handleChange, handleSubmit, offer }: IOffer) {
                 <div
                     className={`${styles["form-container__item"]} ${styles["form-container__item--full-width"]}`}
                 >
-                    <label htmlFor="images">images</label>
+                    <label htmlFor="images">Images</label>
                     <input
                         name="images"
                         id="images"

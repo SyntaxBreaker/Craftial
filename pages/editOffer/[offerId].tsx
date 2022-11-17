@@ -19,6 +19,7 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
         description: offerToEdit.description,
         images: [],
     });
+    const [isError, setIsError] = useState<boolean>(false);
 
     const router = useRouter();
     const { offerId } = router.query;
@@ -47,10 +48,12 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
                             },
                             body: offer,
                         },
-                        router
+                        router,
+                        setIsError
                     )
                 }
                 offer={offer}
+                isError={isError}
             />
         </>
     );

@@ -42,17 +42,19 @@ export const handleSubmit = async (
     event: React.SyntheticEvent,
     URL: string,
     options: IOptions,
-    router: any
+    router: any,
+    setIsError: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
     event.preventDefault();
 
     try {
+        setIsError(false);
         let body = options.body;
         let { images } = body;
         const imageURLs: IImage[] = [];
 
         for (let i = 0; i < images.length; i++) {
-            const image = images[i].split(',')[1];
+            const image = images[i].split(",")[1];
             const formData = new FormData();
             formData.set("key", `${process.env.IMGBB_API_KEY}`);
             formData.append("image", image);
@@ -82,6 +84,6 @@ export const handleSubmit = async (
 
         router.push("/");
     } catch (err) {
-        console.log(err);
+        setIsError(true);
     }
 };

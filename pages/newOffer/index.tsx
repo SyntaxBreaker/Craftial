@@ -16,6 +16,7 @@ export default withPageAuthRequired(function NewOffer({ user }) {
         description: "",
         images: [],
     });
+    const [isError, setIsError] = useState<boolean>(false);
 
     const router = useRouter();
 
@@ -39,9 +40,11 @@ export default withPageAuthRequired(function NewOffer({ user }) {
                             },
                             body: offer,
                         },
-                        router
+                        router,
+                        setIsError
                     )
                 }
+                isError={isError}
             />
         </>
     );
