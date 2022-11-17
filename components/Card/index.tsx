@@ -9,10 +9,10 @@ function Card(offer: IOffer) {
             <div className={styles["offer-card"]}>
                 <div className={styles["offer-card__header"]}>
                     <Image
-                        src="https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg"
+                        src={offer.images[0].url}
                         alt=""
                         width="100%"
-                        height="50px"
+                        height="100px"
                         sizes="(min-width: 768px) 960px, 720px"
                         className={styles["offer-card__image"]}
                     />
