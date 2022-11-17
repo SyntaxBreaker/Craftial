@@ -7,6 +7,12 @@
 * [Project Status](#project-status)
 * [Contact](#contact)
 
+## Demo
+[https://craftial.netlify.app](https://craftial.netlify.app)
+
+- Email address: test@localhost.com
+- Password: Test12345
+
 
 ## Technologies Used
 - Next.js
