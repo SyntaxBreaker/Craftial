@@ -12,7 +12,7 @@ function Card(offer: IOffer) {
                         src={offer.images[0].url}
                         alt=""
                         width="100%"
-                        height="100px"
+                        height="70px"
                         sizes="(min-width: 768px) 960px, 720px"
                         className={styles["offer-card__image"]}
                     />
