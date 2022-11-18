@@ -20,9 +20,17 @@
         }
 
         &--favorite {
-            background-color: #f8f9fa;
+            background-color: variables.$primary-color;
             margin-left: 0.6rem;
-            border-radius: 4px;
+
+            @media screen and (min-width: 768px) {
+                background-color: white;
+
+                &:hover {
+                    background-color: variables.$primary-color;
+                    border-radius: 3px;
+                }   
+            }
         }
     }
 
