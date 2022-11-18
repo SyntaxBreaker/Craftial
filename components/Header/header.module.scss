@@ -21,7 +21,7 @@
         align-items: center;
 
         &__item {
-            border-radius: 50%;
+            border-radius: 4px;
             padding: 0.5rem;
             background-color: variables.$quaternary-color;
         }

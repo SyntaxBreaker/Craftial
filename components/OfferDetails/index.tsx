@@ -61,7 +61,7 @@ function OfferDetails({
                 className={`${styles["offer-details__button"]} ${styles["offer-details__button--favorite"]}`}
                 onClick={handleFavorites}
             >
-                🧡
+                💙
             </button>
             <h2 className={styles["offer-details__name"]}>{name}</h2>
             <p
