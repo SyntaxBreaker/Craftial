@@ -39,7 +39,10 @@ function SearchBox({ offers, setFilteredOffers, setIsFiltered }: IProps) {
     }, [searchInput]);
 
     return (
-        <form className={styles["form"]}>
+        <form 
+            className={styles["form"]}
+            onSubmit={event => event.preventDefault()}
+        >
             <input
                 type="search"
                 placeholder="Search for..."
