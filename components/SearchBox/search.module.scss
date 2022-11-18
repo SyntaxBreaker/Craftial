@@ -8,6 +8,8 @@
     &__input {
         padding: 0.4rem 3rem 0.4rem 0.5rem;
         width: 100%;
+        border: 1px solid variables.$primary-color;
+        border-radius: 5px;
 
         &:focus {
             outline: none;
@@ -15,12 +17,12 @@
 
         &--submit {
             position: absolute;
-            height: 2rem;
+            height: 1.85rem;
             right: 0;
             padding: 0.5rem;
             border: none;
             background-color: transparent;
-            border-left: 1px solid variables.$tertiary-color;
+            border-left: 1px solid variables.$primary-color;
         }
     }
 
