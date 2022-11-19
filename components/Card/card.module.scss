@@ -3,7 +3,7 @@
 .offer-card {
     background-color: variables.$primary-color;
     color: variables.$quaternary-color;
-    flex-basis: 45%;
+    flex-basis: 90%;
     min-height: 200px;
     overflow: hidden;
     border-radius: 10px;
@@ -35,15 +35,15 @@
         }
     }
 
+    @media screen and (min-width: 480px) {
+        flex-basis: 45%;
+    }
+
     @media screen and (min-width: 768px) {
-        & {
-            flex-basis: 30%;
-        }
+        flex-basis: 30%;
     }
 
     @media screen and (min-width: 1440px) {
-        & {
-            flex-basis: 15%;
-        }
+        flex-basis: 15%;
     }
 }
