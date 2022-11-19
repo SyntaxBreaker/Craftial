@@ -43,16 +43,12 @@ function SearchBox({ offers, setFilteredOffers, setIsFiltered }: IProps) {
             className={styles["form"]}
             onSubmit={event => event.preventDefault()}
         >
+            <span className={styles['form__icon']}>🔍</span>
             <input
                 type="search"
                 placeholder="Search for..."
                 className={styles["form__input"]}
                 onChange={handleChange}
-            />
-            <input
-                type="submit"
-                value="🔍"
-                className={styles["form__input--submit"]}
             />
         </form>
     );
