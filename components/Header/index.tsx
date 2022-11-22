@@ -26,12 +26,12 @@ function Header() {
                 {user ? (
                     <>
                         <Link href="/api/auth/logout">
-                            <a className={styles["account__link"]}>Logout</a>
+                            <a className={`${styles["account__link"]} ${styles["account__link--white"]}`}>Logout</a>
                         </Link>
                     </>
                 ) : (
                     <Link href="/api/auth/login">
-                        <a className={styles["account__link"]}>Login</a>
+                        <a className={`${styles["account__link"]} ${styles["account__link--white"]}`}>Login</a>
                     </Link>
                 )}
             </div>

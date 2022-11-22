@@ -28,7 +28,10 @@
 
         &__link {
             text-decoration: none;
-            color: white;
+
+            &--white {
+                color: white;
+            }
         }
     }
 }
