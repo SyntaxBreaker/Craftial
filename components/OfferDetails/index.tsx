@@ -63,12 +63,12 @@ function OfferDetails({
             >
                 💛
             </button>
-            <h2 className={styles["offer-details__name"]}>{name}</h2>
             <p
                 className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
             >
-                {location}
+                📍 {location}
             </p>
+            <h2 className={styles["offer-details__name"]}>{name}</h2>
             <p
                 className={`${styles["offer-details__price"]} ${styles["offer-details__price--bold"]}`}
             >
@@ -78,12 +78,12 @@ function OfferDetails({
                 <p
                     className={`${styles["offer-contact__email"]} ${styles["offer-contact__email--bold"]}`}
                 >
-                    {email}
+                    ✉️ {email}
                 </p>
                 <p
                     className={`${styles["offer-contact__phone-number"]} ${styles["offer-contact__phone-number--bold"]}`}
                 >
-                    {phoneNumber}
+                    📞 {phoneNumber}
                 </p>
             </div>
             <p className={styles["offer-details__description"]}>

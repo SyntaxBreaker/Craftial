@@ -54,7 +54,7 @@
     }
 
     &__name {
-        margin-top: 2rem;
+        margin-top: .75rem;
         color: variables.$primary-color;
         font-size: 2rem;
 
@@ -64,13 +64,15 @@
     }
 
     &__location {
+        margin-top: 1.5rem;
         color: variables.$primary-color;
-        font-size: 0.875rem;
+        font-size: .875rem;
+        font-weight: 600;
     }
 
     &__price {
         color: variables.$primary-color;
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .offer-contact {
@@ -80,7 +82,7 @@
         gap: 1rem;
         margin-top: 1rem;
         padding: 1rem 0;
-        font-size: 0.875rem;
+        font-size: .875rem;
         border-top: 1px solid variables.$primary-color;
         border-bottom: 1px solid variables.$primary-color;
 
@@ -96,7 +98,7 @@
 
     &__description {
         line-height: 1.5rem;
-        font-size: 0.875rem;
+        font-size: .75rem;
 
         &--bold {
             font-weight: 900;
