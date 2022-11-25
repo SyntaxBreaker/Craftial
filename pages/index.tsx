@@ -1,4 +1,3 @@
-import Categories from "components/Categories";
 import Offers from "components/Offers";
 import connectToMongoDB from "utils/mongoDB";
 import offer from "models/offer";
@@ -11,7 +10,6 @@ function Home({ offers }: IOffers) {
             <Head>
                 <title>Homepage</title>
             </Head>
-            <Categories />
             <Offers offers={offers} />
         </>
     );
