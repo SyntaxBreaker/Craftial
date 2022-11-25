@@ -1,14 +1,11 @@
 @use "utils/variables";
 
 .offer-card {
-    background-color: variables.$primary-color;
-    color: variables.$quaternary-color;
     flex-basis: 90%;
     min-height: 200px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 12px -3px,
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 12px -3px,
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
     &:hover {
@@ -20,30 +17,70 @@
         overflow-wrap: break-word;
     }
 
-    &__name,
-    &__price,
+    &__section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0.5rem 0.15rem;
+
+        &--column {
+            align-items: flex-start;
+            gap: 0.4rem;
+            flex-direction: column;
+        }
+    }
+
+    &__name {
+        color: variables.$primary-color;
+        font-size: 1.5rem;
+    }
+
+    &__price {
+        color: variables.$primary-color;
+        font-size: 1.125rem;
+        font-style: italic;
+    }
+
+    &__email,
     &__location,
+    &__phone-number {
+        color: variables.$tertiary-color;
+        font-size: 0.875rem;
+    }
+
+    &__description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        color: variables.$primary-color;
+        font-size: 0.875rem;
+    }
+
     &__date {
-        margin: 0.35rem 0;
-
-        &--bold {
-            font-weight: 900;
-        }
-
-        &--golden {
-            color: variables.$secondary-color;
-        }
+        font-size: 0.75rem;
+        color: variables.$tertiary-color;
     }
 
     @media screen and (min-width: 480px) {
-        flex-basis: 45%;
+        flex-basis: 80%;
     }
 
     @media screen and (min-width: 768px) {
+        flex-basis: 45%;
+    }
+
+    @media screen and (min-width: 1024px) {
         flex-basis: 30%;
     }
 
+    @media screen and (min-width: 1200px) {
+        flex-basis: 25%;
+    }
+
     @media screen and (min-width: 1440px) {
-        flex-basis: 15%;
+        flex-basis: 20%;
     }
 }

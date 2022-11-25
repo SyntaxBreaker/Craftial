@@ -18,44 +18,39 @@ function Card(offer: IOffer) {
                     />
                 </div>
                 <div className={styles["offer-card__body"]}>
-                    <h3
-                        className={`${styles["offer-card__name"]} ${styles["offer-card__name--golden"]}`}
-                    >
-                        {offer.name}
-                    </h3>
-                    <p className={styles["offer-card__price"]}>
-                        Price:{" "}
-                        <span
-                            className={`
-                                        ${styles["offer-card__price--bold"]}
-                                        ${styles["offer-card__price--golden"]}
-                                    `}
-                        >
+                    <div className={styles["offer-card__section"]}>
+                        <h3 className={`${styles["offer-card__name"]}`}>
+                            {offer.name}
+                        </h3>
+                        <p className={styles["offer-card__price"]}>
                             ${offer.price}
-                        </span>
-                    </p>
-                    <p className={styles["offer-card__location"]}>
-                        Location:{" "}
-                        <span
-                            className={`
-                                        ${styles["offer-card__location--bold"]}
-                                        ${styles["offer-card__location--golden"]}
-                                    `}
-                        >
-                            {offer.location}
-                        </span>
-                    </p>
-                    <p className={styles["offer-card__date"]}>
-                        Publication date:{" "}
-                        <span
-                            className={`
-                                    ${styles["offer-card__date--bold"]}
-                                    ${styles["offer-card__date--golden"]}
-                                `}
-                        >
-                            {offer.createdAt.split("T")[0]}
-                        </span>
-                    </p>
+                        </p>
+                    </div>
+                    <hr className={styles["offer-card__divider"]} />
+                    <div
+                        className={`${styles["offer-card__section"]} ${styles["offer-card__section--column"]}`}
+                    >
+                        <p className={styles["offer-card__email"]}>
+                            ✉️ {offer.email}
+                        </p>
+                        <p className={styles["offer-card__location"]}>
+                            📍 {offer.location}
+                        </p>
+                        <p className={styles["offer-card__phone-number"]}>
+                            📞 {offer.phoneNumber}
+                        </p>
+                    </div>
+                    <hr className={styles["offer-card__divider"]} />
+                    <div className={styles["offer-card__section"]}>
+                        <p className={styles["offer-card__description"]}>
+                            {offer.description}
+                        </p>
+                    </div>
+                    <div className={styles["offer-card__section"]}>
+                        <p className={styles["offer-card__date"]}>
+                            Publication date: {offer.createdAt.split("T")[0]}
+                        </p>
+                    </div>
                 </div>
             </div>
         </Link>
