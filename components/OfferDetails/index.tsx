@@ -5,6 +5,8 @@ import { IOffer } from "types";
 import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
 import { useState } from "react";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function OfferDetails({
     _id,
@@ -32,14 +34,30 @@ function OfferDetails({
         if (favoriteList.includes(_id)) {
             favoriteList.splice(favoriteList.indexOf(_id), 1);
             localStorage.setItem("favorites", JSON.stringify(favoriteList));
+            toast.success('The offer has been removed from favorites.', {
+                position: 'top-center',
+                
+            })
         } else {
             favoriteList.push(_id);
             localStorage.setItem("favorites", JSON.stringify(favoriteList));
+            toast.success('The offer has been added to favorites.', {
+                position: 'top-center'
+            })
         }
     }
 
     return (
-        <div className={styles["offer-details"]}>
+        <>
+            <ToastContainer
+                autoClose={3000}
+                theme="colored"
+                toastStyle={{
+                    backgroundColor: '#6f63ad',
+                    color: '#FFF'
+                }}
+            />
+            <div className={styles["offer-details"]}>
             {user?.email === email && (
                 <Link href={`/editOffer/${_id}`}>
                     <a
@@ -95,6 +113,7 @@ function OfferDetails({
                 </span>
             </p>
         </div>
+        </>
     );
 }
 
