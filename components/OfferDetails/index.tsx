@@ -5,8 +5,8 @@ import { IOffer } from "types";
 import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
 import { useState } from "react";
-import {ToastContainer, toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function OfferDetails({
     _id,
@@ -21,10 +21,18 @@ function OfferDetails({
     const router = useRouter();
 
     function removeOffer() {
+        toast.info("The offer is being removed.", {
+            position: "top-center",
+        });
         fetch(`api/removeOffer/${_id}`, {
             method: "DELETE",
         });
-        router.push("/");
+        toast.success("The offer has been removed.", {
+            position: "top-center",
+        });
+        setTimeout(() => {
+            router.push("/");
+        }, 3000);
     }
 
     function handleFavorites() {
@@ -34,16 +42,15 @@ function OfferDetails({
         if (favoriteList.includes(_id)) {
             favoriteList.splice(favoriteList.indexOf(_id), 1);
             localStorage.setItem("favorites", JSON.stringify(favoriteList));
-            toast.success('The offer has been removed from favorites.', {
-                position: 'top-center',
-                
-            })
+            toast.success("The offer has been removed from favorites.", {
+                position: "top-center",
+            });
         } else {
             favoriteList.push(_id);
             localStorage.setItem("favorites", JSON.stringify(favoriteList));
-            toast.success('The offer has been added to favorites.', {
-                position: 'top-center'
-            })
+            toast.success("The offer has been added to favorites.", {
+                position: "top-center",
+            });
         }
     }
 
@@ -53,66 +60,66 @@ function OfferDetails({
                 autoClose={3000}
                 theme="colored"
                 toastStyle={{
-                    backgroundColor: '#6f63ad',
-                    color: '#FFF'
+                    backgroundColor: "#6f63ad",
+                    color: "#FFF",
                 }}
             />
             <div className={styles["offer-details"]}>
-            {user?.email === email && (
-                <Link href={`/editOffer/${_id}`}>
-                    <a
-                        className={`${styles["offer-details__link"]} ${styles["offer-details__button"]} ${styles["offer-details__button--edit"]}`}
+                {user?.email === email && (
+                    <Link href={`/editOffer/${_id}`}>
+                        <a
+                            className={`${styles["offer-details__link"]} ${styles["offer-details__button"]} ${styles["offer-details__button--edit"]}`}
+                        >
+                            Edit offer
+                        </a>
+                    </Link>
+                )}
+                {user?.email === email && (
+                    <button
+                        className={`${styles["offer-details__button"]} ${styles["offer-details__button--remove"]}`}
+                        onClick={removeOffer}
                     >
-                        Edit offer
-                    </a>
-                </Link>
-            )}
-            {user?.email === email && (
+                        Remove offer
+                    </button>
+                )}
                 <button
-                    className={`${styles["offer-details__button"]} ${styles["offer-details__button--remove"]}`}
-                    onClick={removeOffer}
+                    className={`${styles["offer-details__button"]} ${styles["offer-details__button--favorite"]}`}
+                    onClick={handleFavorites}
                 >
-                    Remove offer
+                    💛
                 </button>
-            )}
-            <button
-                className={`${styles["offer-details__button"]} ${styles["offer-details__button--favorite"]}`}
-                onClick={handleFavorites}
-            >
-                💛
-            </button>
-            <p
-                className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
-            >
-                📍 {location}
-            </p>
-            <h2 className={styles["offer-details__name"]}>{name}</h2>
-            <p
-                className={`${styles["offer-details__price"]} ${styles["offer-details__price--bold"]}`}
-            >
-                ${price}
-            </p>
-            <div className={styles["offer-contact"]}>
                 <p
-                    className={`${styles["offer-contact__email"]} ${styles["offer-contact__email--bold"]}`}
+                    className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
                 >
-                    ✉️ {email}
+                    📍 {location}
                 </p>
+                <h2 className={styles["offer-details__name"]}>{name}</h2>
                 <p
-                    className={`${styles["offer-contact__phone-number"]} ${styles["offer-contact__phone-number--bold"]}`}
+                    className={`${styles["offer-details__price"]} ${styles["offer-details__price--bold"]}`}
                 >
-                    📞 {phoneNumber}
+                    ${price}
+                </p>
+                <div className={styles["offer-contact"]}>
+                    <p
+                        className={`${styles["offer-contact__email"]} ${styles["offer-contact__email--bold"]}`}
+                    >
+                        ✉️ {email}
+                    </p>
+                    <p
+                        className={`${styles["offer-contact__phone-number"]} ${styles["offer-contact__phone-number--bold"]}`}
+                    >
+                        📞 {phoneNumber}
+                    </p>
+                </div>
+                <p className={styles["offer-details__description"]}>
+                    Description:{" "}
+                    <span
+                        className={`${styles["offer-details__description--bold"]} ${styles["offer-details__description--green"]}`}
+                    >
+                        {description}
+                    </span>
                 </p>
             </div>
-            <p className={styles["offer-details__description"]}>
-                Description:{" "}
-                <span
-                    className={`${styles["offer-details__description--bold"]} ${styles["offer-details__description--green"]}`}
-                >
-                    {description}
-                </span>
-            </p>
-        </div>
         </>
     );
 }
