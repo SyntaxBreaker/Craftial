@@ -1,9 +1,12 @@
+@use "utils/variables";
+
 .wrapper {
   width: 100%;
   min-height: 10rem;
   padding: 2rem 0.5rem;
 
   .wrapper-title {
+    color: variables.$primary-color;
     text-align: center;
   }
 

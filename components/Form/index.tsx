@@ -14,7 +14,7 @@ interface IOffer {
 function Form({ title, handleChange, handleSubmit, offer, isError }: IOffer) {
   return (
     <section className={styles["form-container"]}>
-      <h2>{title}</h2>
+      <h2 className={styles["form-container__title"]}>{title}</h2>
       {isError && (
         <p className={styles["form-container__error"]}>
           An error has occurred. Refill the form correctly.
