@@ -43,7 +43,7 @@ function Favorites() {
           <p className={styles["favorites__loading"]}>
             Please be patient, loading...
           </p>
-        ) : favoriteOffers?.length === 0 ? (
+        ) : !favoriteOffers ? (
           <p className={styles["favorites__info"]}>
             There are no favorite offers.
           </p>
@@ -63,7 +63,9 @@ function Favorites() {
                     ))}
                   </div>
                 ) : (
-                  <p>There are no filtered offers.</p>
+                  <p className={styles["favorites__info"]}>
+                    There are no filtered offers.
+                  </p>
                 )
               ) : (
                 <div className={styles["offers"]}>

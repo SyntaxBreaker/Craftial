@@ -10,15 +10,15 @@
 
   &__loading {
     margin-top: 1rem;
-    font-size: 1.2rem;
     color: variables.$tertiary-color;
     animation: pulse 3s infinite;
+    text-align: center;
   }
 
   &__info {
     margin-top: 1rem;
-    font-size: 1.2rem;
     color: variables.$tertiary-color;
+    text-align: center;
   }
 
   .offers {
