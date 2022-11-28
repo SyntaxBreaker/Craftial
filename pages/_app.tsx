@@ -4,13 +4,13 @@ import Layout from "components/Layout";
 import { UserProvider } from "@auth0/nextjs-auth0";
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return (
-        <UserProvider>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
-        </UserProvider>
-    );
+  return (
+    <UserProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </UserProvider>
+  );
 }
 
 export default MyApp;

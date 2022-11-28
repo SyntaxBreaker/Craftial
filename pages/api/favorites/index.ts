@@ -3,25 +3,25 @@ import connectToMongoDB from "utils/mongoDB";
 import offer from "models/offer";
 
 export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
+  req: NextApiRequest,
+  res: NextApiResponse
 ) {
-    let favoriteOfferIDs =
-        typeof req.query.ids === "string"
-            ? req.query.ids.split(",")
-            : req.query.ids;
+  let favoriteOfferIDs =
+    typeof req.query.ids === "string"
+      ? req.query.ids.split(",")
+      : req.query.ids;
 
-    const favoriteOffers = await offer.find({
-        _id: {
-            $in: favoriteOfferIDs,
-        },
-    });
+  const favoriteOffers = await offer.find({
+    _id: {
+      $in: favoriteOfferIDs,
+    },
+  });
 
-    res.json(favoriteOffers);
+  res.json(favoriteOffers);
 }
 
 export const config = {
-    api: {
-        externalResolver: true,
-    },
+  api: {
+    externalResolver: true,
+  },
 };

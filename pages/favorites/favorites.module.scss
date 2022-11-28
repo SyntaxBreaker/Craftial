@@ -1,45 +1,45 @@
 @use "utils/variables";
 
 .favorites {
-    margin: 2rem 0;
+  margin: 2rem 0;
 
-    &__title {
-        text-align: center;
+  &__title {
+    text-align: center;
+  }
+
+  &__loading {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: variables.$tertiary-color;
+    animation: pulse 3s infinite;
+  }
+
+  &__info {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: variables.$tertiary-color;
+  }
+
+  .offers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.75);
     }
 
-    &__loading {
-        margin-top: 1rem;
-        font-size: 1.2rem;
-        color: variables.$tertiary-color;
-        animation: pulse 3s infinite;
+    50% {
+      transform: scale(1.25);
     }
 
-    &__info {
-        margin-top: 1rem;
-        font-size: 1.2rem;
-        color: variables.$tertiary-color;
+    100% {
+      transform: scale(0.75);
     }
-
-    .offers {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(0.75);
-        }
-
-        50% {
-            transform: scale(1.25);
-        }
-
-        100% {
-            transform: scale(0.75);
-        }
-    }
+  }
 }

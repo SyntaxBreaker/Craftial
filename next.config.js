@@ -7,11 +7,11 @@ const nextConfig = {
     defaultLocale: "en",
   },
   images: {
-    domains: ['cdn.pixabay.com', 'i.ibb.co']
+    domains: ["cdn.pixabay.com", "i.ibb.co"],
   },
   env: {
-    IMGBB_API_KEY: process.env.IMGBB_API_KEY
-  }
-}
+    IMGBB_API_KEY: process.env.IMGBB_API_KEY,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

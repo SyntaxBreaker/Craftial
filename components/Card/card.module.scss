@@ -1,85 +1,85 @@
 @use "utils/variables";
 
 .offer-card {
-    flex-basis: 90%;
-    min-height: 200px;
+  flex-basis: 90%;
+  min-height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px 0px variables.$primary-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__body {
+    padding: 0.5rem;
+    overflow-wrap: break-word;
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem 0.15rem;
+
+    &--column {
+      align-items: flex-start;
+      gap: 0.4rem;
+      flex-direction: column;
+    }
+  }
+
+  &__name {
+    color: variables.$primary-color;
+    font-size: 1.5rem;
+  }
+
+  &__price {
+    color: variables.$primary-color;
+    font-size: 1.125rem;
+    font-style: italic;
+  }
+
+  &__email,
+  &__location,
+  &__phone-number {
+    color: variables.$tertiary-color;
+    font-size: 0.875rem;
+  }
+
+  &__description {
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 1px 5px 0px variables.$primary-color;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    color: variables.$primary-color;
+    font-size: 0.875rem;
+  }
 
-    &:hover {
-        cursor: pointer;
-    }
+  &__date {
+    font-size: 0.75rem;
+    color: variables.$tertiary-color;
+  }
 
-    &__body {
-        padding: 0.5rem;
-        overflow-wrap: break-word;
-    }
+  @media screen and (min-width: 480px) {
+    flex-basis: 80%;
+  }
 
-    &__section {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 0.5rem 0.15rem;
+  @media screen and (min-width: 768px) {
+    flex-basis: 45%;
+  }
 
-        &--column {
-            align-items: flex-start;
-            gap: 0.4rem;
-            flex-direction: column;
-        }
-    }
+  @media screen and (min-width: 1024px) {
+    flex-basis: 30%;
+  }
 
-    &__name {
-        color: variables.$primary-color;
-        font-size: 1.5rem;
-    }
+  @media screen and (min-width: 1200px) {
+    flex-basis: 25%;
+  }
 
-    &__price {
-        color: variables.$primary-color;
-        font-size: 1.125rem;
-        font-style: italic;
-    }
-
-    &__email,
-    &__location,
-    &__phone-number {
-        color: variables.$tertiary-color;
-        font-size: 0.875rem;
-    }
-
-    &__description {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 8;
-        -webkit-box-orient: vertical;
-        color: variables.$primary-color;
-        font-size: 0.875rem;
-    }
-
-    &__date {
-        font-size: 0.75rem;
-        color: variables.$tertiary-color;
-    }
-
-    @media screen and (min-width: 480px) {
-        flex-basis: 80%;
-    }
-
-    @media screen and (min-width: 768px) {
-        flex-basis: 45%;
-    }
-
-    @media screen and (min-width: 1024px) {
-        flex-basis: 30%;
-    }
-
-    @media screen and (min-width: 1200px) {
-        flex-basis: 25%;
-    }
-
-    @media screen and (min-width: 1440px) {
-        flex-basis: 20%;
-    }
+  @media screen and (min-width: 1440px) {
+    flex-basis: 20%;
+  }
 }

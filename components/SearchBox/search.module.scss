@@ -1,37 +1,37 @@
 @use "utils/variables";
 
 .form {
-    margin: 1rem auto;
-    position: relative;
-    width: 90%;
+  margin: 1rem auto;
+  position: relative;
+  width: 90%;
 
-    &__input {
-        padding: 0.4rem .5rem 0.4rem 2.5rem;
-        width: 100%;
-        border: 2px solid variables.$primary-color;
-        border-radius: 5px;
-        font-weight: 600;
+  &__input {
+    padding: 0.4rem 0.5rem 0.4rem 2.5rem;
+    width: 100%;
+    border: 2px solid variables.$primary-color;
+    border-radius: 5px;
+    font-weight: 600;
 
-        &:focus {
-            outline: none;
-        }
+    &:focus {
+      outline: none;
     }
+  }
 
-    &__icon {
-        position: absolute;
-        left: 0;
-        padding: 0.4rem .6rem;
-    }
+  &__icon {
+    position: absolute;
+    left: 0;
+    padding: 0.4rem 0.6rem;
+  }
 
-    @media screen and (min-width: 480px) {
-        width: 60%;
-    }
+  @media screen and (min-width: 480px) {
+    width: 60%;
+  }
 
-    @media screen and (min-width: 768px) {
-        width: 40%;
-    }
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
 
-    @media screen and (min-width: 1440px) {
-        width: 25%;
-    }
+  @media screen and (min-width: 1440px) {
+    width: 25%;
+  }
 }

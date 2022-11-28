@@ -1,18 +1,18 @@
 .wrapper {
-    width: 100%;
-    min-height: 10rem;
-    padding: 2rem 0.5rem;
+  width: 100%;
+  min-height: 10rem;
+  padding: 2rem 0.5rem;
 
-    .wrapper-title {
-        text-align: center;
-    }
+  .wrapper-title {
+    text-align: center;
+  }
 
-    .offers {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
+  .offers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
 }

@@ -3,19 +3,19 @@ import connectToMongoDB from "utils/mongoDB";
 import offer from "models/offer";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    (async () => {
-        try {
-            const { offerId } = req.query;
-            await connectToMongoDB();
-            await offer.findOneAndRemove({ _id: offerId });
-        } catch (err) {
-            console.log(err);
-        }
-    })();
+  (async () => {
+    try {
+      const { offerId } = req.query;
+      await connectToMongoDB();
+      await offer.findOneAndRemove({ _id: offerId });
+    } catch (err) {
+      console.log(err);
+    }
+  })();
 }
 
 export const config = {
-    api: {
-        externalResolver: true,
-    },
+  api: {
+    externalResolver: true,
+  },
 };

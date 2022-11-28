@@ -10,71 +10,71 @@ import { handleChange, handleSubmit } from "utils/formController";
 import Head from "next/head";
 
 export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
-    const [offer, setOffer] = useState<IForm>({
-        name: offerToEdit.name,
-        location: offerToEdit.location,
-        price: offerToEdit.price,
-        email: offerToEdit.email,
-        phoneNumber: offerToEdit.phoneNumber,
-        description: offerToEdit.description,
-        images: [],
-    });
-    const [isError, setIsError] = useState<boolean>(false);
+  const [offer, setOffer] = useState<IForm>({
+    name: offerToEdit.name,
+    location: offerToEdit.location,
+    price: offerToEdit.price,
+    email: offerToEdit.email,
+    phoneNumber: offerToEdit.phoneNumber,
+    description: offerToEdit.description,
+    images: [],
+  });
+  const [isError, setIsError] = useState<boolean>(false);
 
-    const router = useRouter();
-    const { offerId } = router.query;
+  const router = useRouter();
+  const { offerId } = router.query;
 
-    useEffect(() => {
-        user.email !== offer.email && router.push(`/${offerId}`);
-    }, []);
+  useEffect(() => {
+    user.email !== offer.email && router.push(`/${offerId}`);
+  }, []);
 
-    return (
-        <>
-            <Head>
-                <title>Edit the offer</title>
-            </Head>
-            <Form
-                title="Edit the offer"
-                handleChange={(event) => handleChange(event, offer, setOffer)}
-                handleSubmit={(event) =>
-                    handleSubmit(
-                        event,
-                        `/api/editOffer/${offerId}`,
-                        {
-                            method: "PUT",
-                            headers: {
-                                Accept: "application/json",
-                                "Content-Type": "application/json",
-                            },
-                            body: offer,
-                        },
-                        router,
-                        setIsError
-                    )
-                }
-                offer={offer}
-                isError={isError}
-            />
-        </>
-    );
+  return (
+    <>
+      <Head>
+        <title>Edit the offer</title>
+      </Head>
+      <Form
+        title="Edit the offer"
+        handleChange={(event) => handleChange(event, offer, setOffer)}
+        handleSubmit={(event) =>
+          handleSubmit(
+            event,
+            `/api/editOffer/${offerId}`,
+            {
+              method: "PUT",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              body: offer,
+            },
+            router,
+            setIsError
+          )
+        }
+        offer={offer}
+        isError={isError}
+      />
+    </>
+  );
 });
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    try {
-        const { offerId } = context.query;
-        await connectToMongoDB();
-        const doc = JSON.parse(
-            JSON.stringify(await offer.findById({ _id: offerId }).exec())
-        );
+  try {
+    const { offerId } = context.query;
+    await connectToMongoDB();
+    const doc = JSON.parse(
+      JSON.stringify(await offer.findById({ _id: offerId }).exec())
+    );
 
-        return {
-            props: {
-                offerToEdit: doc,
-            },
-        };
-    } catch (err) {
-        return {
-            notFound: true,
-        };
-    }
+    return {
+      props: {
+        offerToEdit: doc,
+      },
+    };
+  } catch (err) {
+    return {
+      notFound: true,
+    };
+  }
 }

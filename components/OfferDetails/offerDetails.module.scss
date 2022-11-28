@@ -1,119 +1,119 @@
 @use "../../utils/variables";
 
 .offer-details {
-    width: 100%;
+  width: 100%;
+  margin-top: 1rem;
+
+  &__button {
+    padding: 0.6rem;
+    border: 0;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &--edit {
+      background-color: variables.$primary-color;
+    }
+
+    &--remove {
+      background-color: variables.$secondary-color;
+      margin-left: 0.6rem;
+    }
+
+    &--favorite {
+      background-color: variables.$primary-color;
+      margin-left: 0.6rem;
+
+      @media screen and (min-width: 768px) {
+        background-color: white;
+
+        &:hover {
+          background-color: variables.$primary-color;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: variables.$quaternary-color;
+  }
+
+  &__price,
+  &__description,
+  &__location {
+    margin-top: 0.75rem;
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  &__name {
+    margin-top: 0.75rem;
+    color: variables.$primary-color;
+    font-size: 2rem;
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  &__location {
+    margin-top: 1.5rem;
+    color: variables.$primary-color;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  &__price {
+    color: variables.$primary-color;
+    font-size: 1rem;
+  }
+
+  .offer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
     margin-top: 1rem;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    border-top: 1px solid variables.$primary-color;
+    border-bottom: 1px solid variables.$primary-color;
 
-    &__button {
-        padding: 0.6rem;
-        border: 0;
-        font-size: 1rem;
-        cursor: pointer;
+    &__email,
+    &__phone-number {
+      color: variables.$tertiary-color;
 
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &--edit {
-            background-color: variables.$primary-color;
-        }
-
-        &--remove {
-            background-color: variables.$secondary-color;
-            margin-left: 0.6rem;
-        }
-
-        &--favorite {
-            background-color: variables.$primary-color;
-            margin-left: 0.6rem;
-
-            @media screen and (min-width: 768px) {
-                background-color: white;
-
-                &:hover {
-                    background-color: variables.$primary-color;
-                    border-radius: 3px;
-                }
-            }
-        }
+      &--bold {
+        font-weight: bold;
+      }
     }
 
-    &__link {
-        text-decoration: none;
-        color: variables.$quaternary-color;
+    @media screen and (min-width: 900px) {
+      flex-direction: row;
+    }
+  }
+
+  &__description {
+    line-height: 1.5rem;
+    font-size: 0.75rem;
+
+    &--bold {
+      font-weight: 900;
     }
 
-    &__price,
-    &__description,
-    &__location {
-        margin-top: 0.75rem;
-
-        &--bold {
-            font-weight: bold;
-        }
+    &--green {
+      color: variables.$primary-color;
     }
+  }
 
-    &__name {
-        margin-top: 0.75rem;
-        color: variables.$primary-color;
-        font-size: 2rem;
-
-        &--bold {
-            font-weight: bold;
-        }
-    }
-
-    &__location {
-        margin-top: 1.5rem;
-        color: variables.$primary-color;
-        font-size: 0.875rem;
-        font-weight: 600;
-    }
-
-    &__price {
-        color: variables.$primary-color;
-        font-size: 1rem;
-    }
-
-    .offer-contact {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 1rem;
-        margin-top: 1rem;
-        padding: 1rem 0;
-        font-size: 0.875rem;
-        border-top: 1px solid variables.$primary-color;
-        border-bottom: 1px solid variables.$primary-color;
-
-        &__email,
-        &__phone-number {
-            color: variables.$tertiary-color;
-
-            &--bold {
-                font-weight: bold;
-            }
-        }
-
-        @media screen and (min-width: 900px) {
-            flex-direction: row;
-        }
-    }
-
-    &__description {
-        line-height: 1.5rem;
-        font-size: 0.75rem;
-
-        &--bold {
-            font-weight: 900;
-        }
-
-        &--green {
-            color: variables.$primary-color;
-        }
-    }
-
-    @media screen and (min-width: 768px) {
-        flex: 1;
-    }
+  @media screen and (min-width: 768px) {
+    flex: 1;
+  }
 }
