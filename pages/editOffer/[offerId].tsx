@@ -17,6 +17,7 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
     email: offerToEdit.email,
     phoneNumber: offerToEdit.phoneNumber,
     description: offerToEdit.description,
+    addedImages: offerToEdit.images,
     images: [],
   });
   const [isError, setIsError] = useState<boolean>(false);
@@ -54,6 +55,7 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
         }
         offer={offer}
         isError={isError}
+        setOffer={setOffer}
       />
     </>
   );

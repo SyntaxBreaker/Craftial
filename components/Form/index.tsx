@@ -1,5 +1,7 @@
 import styles from "utils/form.module.scss";
 import { IForm } from "types";
+import Image from "next/image";
+import { handleRemoveAddedImages } from "utils/formController";
 
 interface IOffer {
   title: string;
@@ -9,9 +11,17 @@ interface IOffer {
   handleSubmit: (event: React.SyntheticEvent) => void;
   offer?: IForm;
   isError: boolean;
+  setOffer: React.Dispatch<React.SetStateAction<IForm>>;
 }
 
-function Form({ title, handleChange, handleSubmit, offer, isError }: IOffer) {
+function Form({
+  title,
+  handleChange,
+  handleSubmit,
+  offer,
+  isError,
+  setOffer,
+}: IOffer) {
   return (
     <section className={styles["form-container"]}>
       <h2 className={styles["form-container__title"]}>{title}</h2>
@@ -69,6 +79,28 @@ function Form({ title, handleChange, handleSubmit, offer, isError }: IOffer) {
             required
           />
         </div>
+        {offer?.addedImages && offer.addedImages.length > 0 && (
+          <div
+            className={`${styles["form-container__item"]} ${styles["form-container__item--full-width"]}`}
+          >
+            <p>Added images</p>
+            <div className={`${styles["form-container__images"]}`}>
+              {offer?.addedImages.map((image) => (
+                <Image
+                  key={image.id}
+                  src={image.url}
+                  alt=""
+                  width="220px"
+                  height="220px"
+                  className={styles["form-container__image"]}
+                  onClick={() =>
+                    handleRemoveAddedImages(image._id, offer, setOffer)
+                  }
+                />
+              ))}
+            </div>
+          </div>
+        )}
         <div
           className={`${styles["form-container__item"]} ${styles["form-container__item--full-width"]}`}
         >
@@ -80,7 +112,9 @@ function Form({ title, handleChange, handleSubmit, offer, isError }: IOffer) {
             multiple={true}
             className={`${styles["form-container__input"]} ${styles["form-container__input--textarea"]}`}
             onChange={handleChange}
-            required
+            required={
+              offer?.addedImages && offer.addedImages.length > 0 ? false : true
+            }
           />
         </div>
         <div

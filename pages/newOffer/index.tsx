@@ -45,6 +45,7 @@ export default withPageAuthRequired(function NewOffer({ user }) {
           )
         }
         isError={isError}
+        setOffer={setOffer}
       />
     </>
   );

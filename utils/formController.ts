@@ -38,6 +38,23 @@ export const handleChange = (
   });
 };
 
+export const handleRemoveAddedImages = (
+  id: string | undefined,
+  offer: IForm,
+  setOffer: React.Dispatch<React.SetStateAction<IForm>>
+) => {
+  if (!id || !offer.addedImages) {
+    return;
+  }
+
+  const { addedImages } = offer;
+
+  setOffer({
+    ...offer,
+    addedImages: addedImages.filter((image) => image._id !== id),
+  });
+};
+
 export const handleSubmit = async (
   event: React.SyntheticEvent,
   URL: string,
@@ -50,7 +67,7 @@ export const handleSubmit = async (
   try {
     setIsError(false);
     let body = options.body;
-    let { images } = body;
+    let { addedImages, images } = body;
     const imageURLs: IImage[] = [];
 
     for (let i = 0; i < images.length; i++) {
@@ -71,12 +88,21 @@ export const handleSubmit = async (
       });
     }
 
-    body = JSON.stringify(
-      (body = {
-        ...body,
-        images: imageURLs,
-      })
-    );
+    if (addedImages) {
+      body = JSON.stringify(
+        (body = {
+          ...body,
+          images: [...imageURLs, ...addedImages],
+        })
+      );
+    } else {
+      body = JSON.stringify(
+        (body = {
+          ...body,
+          images: imageURLs,
+        })
+      );
+    }
 
     fetch(URL, { ...options, body })
       .then((res) => console.log(res))

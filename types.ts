@@ -21,6 +21,7 @@ export interface IForm {
   email: string;
   phoneNumber: string;
   description: string;
+  addedImages?: IImage[];
   images: string[];
 }
 

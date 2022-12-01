@@ -27,6 +27,12 @@
     }
   }
 
+  &__images {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
