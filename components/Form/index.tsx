@@ -135,7 +135,7 @@ function Form({
         <div className={styles["form-container__item"]}>
           <input
             type="submit"
-            value="Create"
+            value="Submit"
             className={`${styles["form-container__input"]} ${styles["form-container__input--submit"]}`}
           />
         </div>

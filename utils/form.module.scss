@@ -30,7 +30,13 @@
   &__images {
     margin-top: 0.5rem;
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+  }
+
+  &__image {
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__item {
