@@ -99,6 +99,9 @@ function Form({
                 />
               ))}
             </div>
+            <p className={`${styles["form-container__instruction"]}`}>
+              Click the image to remove it.
+            </p>
           </div>
         )}
         <div

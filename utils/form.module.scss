@@ -39,6 +39,12 @@
     }
   }
 
+  &__instruction {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
