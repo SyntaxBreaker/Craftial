@@ -7,7 +7,7 @@ function ProfileLayout({ offers, user }: { offers: IOffer[]; user: IUser }) {
   return (
     <section className={styles["profile"]}>
       <ProfileDetails {...user} />
-      <Offers offers={offers} title='Your offers!' />
+      <Offers offers={offers} title="Your offers!" />
     </section>
   );
 }
