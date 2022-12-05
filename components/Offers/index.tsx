@@ -4,13 +4,13 @@ import { IOffers, IOffer } from "../../types";
 import Card from "components/Card";
 import SearchBox from "components/SearchBox";
 
-function Offers({ offers }: IOffers) {
+function Offers({ offers, title }: { offers: IOffer[]; title: string }) {
   const [filteredOffers, setFilteredOffers] = useState<null | IOffer[]>(null);
   const [isFiltered, setIsFiltered] = useState<boolean>(false);
 
   return (
     <section className={styles["wrapper"]}>
-      <h2 className={styles["wrapper-title"]}>Chosen offers for you!</h2>
+      <h2 className={styles["wrapper-title"]}>{title}</h2>
       <SearchBox
         offers={offers}
         setFilteredOffers={setFilteredOffers}

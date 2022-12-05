@@ -10,7 +10,7 @@ function Home({ offers }: IOffers) {
       <Head>
         <title>Homepage</title>
       </Head>
-      <Offers offers={offers} />
+      <Offers offers={offers} title="Chosen offers for you!" />
     </>
   );
 }

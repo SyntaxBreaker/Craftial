@@ -43,3 +43,14 @@ export interface IOptions {
   };
   body: any;
 }
+
+export interface IUser {
+  nickname: string;
+  name: string;
+  picture: string;
+  updated_at: string;
+  email: string;
+  email_verified: boolean;
+  sub: string;
+  sid: string;
+}
