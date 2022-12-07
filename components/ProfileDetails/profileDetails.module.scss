@@ -1,16 +1,26 @@
+@use "utils/variables";
+
 .profile-details {
-  width: 30vmin;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  text-align: center;
+  gap: 0.5rem;
+  color: variables.$primary-color;
+  margin-bottom: 1rem;
 
   &__image-wrapper {
     border-radius: 50%;
     overflow: hidden;
-    height: 48px;
-    width: 48px;
+    height: 96px;
+    width: 96px;
+  }
+
+  &__nickname,
+  &__email {
+    font-size: 1.2rem;
+
+    &--bold {
+      font-weight: bold;
+    }
   }
 }
