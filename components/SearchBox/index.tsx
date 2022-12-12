@@ -46,6 +46,7 @@ function SearchBox({ offers, setFilteredOffers, setIsFiltered }: IProps) {
         placeholder="Search for..."
         className={styles["form__input"]}
         onChange={handleChange}
+        tabIndex={5}
       />
     </form>
   );

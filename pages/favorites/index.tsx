@@ -58,7 +58,7 @@ function Favorites() {
               {isFiltered && filteredOffers ? (
                 filteredOffers.length > 0 ? (
                   <div className={styles["offers"]}>
-                    {filteredOffers.map((offer) => (
+                    {filteredOffers.map((offer, idx) => (
                       <Card {...offer} key={offer._id} />
                     ))}
                   </div>
@@ -69,7 +69,7 @@ function Favorites() {
                 )
               ) : (
                 <div className={styles["offers"]}>
-                  {favoriteOffers?.map((offer) => (
+                  {favoriteOffers?.map((offer, idx) => (
                     <Card {...offer} key={offer._id} />
                   ))}
                 </div>

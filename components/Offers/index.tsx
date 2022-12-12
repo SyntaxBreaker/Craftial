@@ -20,7 +20,7 @@ function Offers({ offers, title }: { offers: IOffer[]; title: string }) {
         {isFiltered && filteredOffers ? (
           filteredOffers.length > 0 ? (
             <>
-              {filteredOffers?.map((offer) => (
+              {filteredOffers?.map((offer, idx) => (
                 <Card {...offer} key={offer._id} />
               ))}
             </>
@@ -29,7 +29,7 @@ function Offers({ offers, title }: { offers: IOffer[]; title: string }) {
           )
         ) : (
           <>
-            {offers.map((offer) => (
+            {offers.map((offer, idx) => (
               <Card {...offer} key={offer._id} />
             ))}
           </>

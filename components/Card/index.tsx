@@ -6,7 +6,7 @@ import styles from "./card.module.scss";
 function Card(offer: IOffer) {
   return (
     <Link href={`/${offer._id}`}>
-      <div className={styles["offer-card"]}>
+      <a className={styles["offer-card"]} tabIndex={6}>
         <div className={styles["offer-card__header"]}>
           <Image
             src={offer.images[0].url}
@@ -46,7 +46,7 @@ function Card(offer: IOffer) {
             </p>
           </div>
         </div>
-      </div>
+      </a>
     </Link>
   );
 }
