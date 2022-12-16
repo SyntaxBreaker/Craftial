@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: variables.$primary-color;
   color: variables.$quaternary-color;
 
@@ -25,7 +25,7 @@
     }
 
     &__link {
-      text-decoration: none;
+      font-size: 1.2rem;
 
       &--white {
         color: white;

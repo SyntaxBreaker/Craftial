@@ -47,7 +47,7 @@ function Header() {
                 className={`${styles["account__link"]} ${styles["account__link--white"]}`}
                 tabIndex={4}
               >
-                Logout
+                Sign out
               </a>
             </Link>
           </>
@@ -57,7 +57,7 @@ function Header() {
               className={`${styles["account__link"]} ${styles["account__link--white"]}`}
               tabIndex={4}
             >
-              Login
+              Sign in
             </a>
           </Link>
         )}
