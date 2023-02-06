@@ -34,10 +34,6 @@
 
 `npm run dev.`
 
-## Project Status
-
-The project is _in progress_
-
 ## Contact
 
 Created by [@xMetaneRx](https://github.com/xMetaneRx)
