@@ -45,6 +45,9 @@
   &__email,
   &__location,
   &__phone-number {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
     color: variables.$tertiary-color;
     font-size: 0.875rem;
   }

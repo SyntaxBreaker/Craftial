@@ -89,7 +89,7 @@ function OfferDetails({
         <p
           className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
         >
-          📍 {location}
+          <Image src='/location.svg' height={18} width={18} /> {location}
         </p>
         <h2 className={styles["offer-details__name"]}>{name}</h2>
         <p
@@ -101,12 +101,12 @@ function OfferDetails({
           <p
             className={`${styles["offer-contact__email"]} ${styles["offer-contact__email--bold"]}`}
           >
-            ✉️ {email}
+            <Image src='/email.svg' height={18} width={18} /> {email}
           </p>
           <p
             className={`${styles["offer-contact__phone-number"]} ${styles["offer-contact__phone-number--bold"]}`}
           >
-            📞 {phoneNumber}
+            <Image src='/phone.svg' height={18} width={18} /> {phoneNumber}
           </p>
         </div>
         <p className={styles["offer-details__description"]}>

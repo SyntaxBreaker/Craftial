@@ -64,6 +64,9 @@
   }
 
   &__location {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
     margin-top: 1.5rem;
     color: variables.$primary-color;
     font-size: 0.875rem;
@@ -88,6 +91,9 @@
 
     &__email,
     &__phone-number {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
       color: variables.$tertiary-color;
 
       &--bold {
