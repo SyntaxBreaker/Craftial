@@ -10,7 +10,7 @@ function Offers({ offers, title }: { offers: IOffer[]; title: string }) {
 
   return (
     <section className={styles["wrapper"]}>
-      <h2 className={styles["wrapper-title"]}>{title}</h2>
+      <h1 className={styles["wrapper-title"]}>{title}</h1>
       <SearchBox
         offers={offers}
         setFilteredOffers={setFilteredOffers}

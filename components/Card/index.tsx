@@ -19,7 +19,7 @@ function Card(offer: IOffer) {
         </div>
         <div className={styles["offer-card__body"]}>
           <div className={styles["offer-card__section"]}>
-            <h3 className={`${styles["offer-card__name"]}`}>{offer.name}</h3>
+            <h2 className={`${styles["offer-card__name"]}`}>{offer.name}</h2>
             <p className={styles["offer-card__price"]}>${offer.price}</p>
           </div>
           <hr className={styles["offer-card__divider"]} />

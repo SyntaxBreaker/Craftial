@@ -38,7 +38,7 @@ function Favorites() {
         <title>Favorite offers</title>
       </Head>
       <section className={styles["favorites"]}>
-        <h2 className={styles["favorites__title"]}>Favorites</h2>
+        <h1 className={styles["favorites__title"]}>Favorites</h1>
         {isLoading ? (
           <p className={styles["favorites__loading"]}>
             Please be patient, loading...

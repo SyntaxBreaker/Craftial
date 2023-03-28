@@ -8,13 +8,11 @@ function Header() {
 
   return (
     <header className={styles["header"]}>
-      <h1 className={styles["header__logo"]}>
-        <Link href="/">
-          <a className={styles["header__link"]} tabIndex={1}>
-            Craftial
-          </a>
-        </Link>
-      </h1>
+      <Link href="/" className={styles["header__logo"]}>
+        <a className={styles["header__link"]} tabIndex={1}>
+          Craftial
+        </a>
+      </Link>
       <div className={styles["account"]}>
         <span className={styles["account__item"]}>
           <Link href="/newOffer">

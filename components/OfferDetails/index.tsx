@@ -91,7 +91,7 @@ function OfferDetails({
         >
           <Image src='/location.svg' height={18} width={18} /> {location}
         </p>
-        <h2 className={styles["offer-details__name"]}>{name}</h2>
+        <h1 className={styles["offer-details__name"]}>{name}</h1>
         <p
           className={`${styles["offer-details__price"]} ${styles["offer-details__price--bold"]}`}
         >

@@ -24,7 +24,7 @@ function Form({
 }: IOffer) {
   return (
     <section className={styles["form-container"]}>
-      <h2 className={styles["form-container__title"]}>{title}</h2>
+      <h1 className={styles["form-container__title"]}>{title}</h1>
       {isError && (
         <p className={styles["form-container__error"]}>
           An error has occurred. Refill the form correctly.
