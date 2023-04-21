@@ -74,7 +74,7 @@ function OfferDetails({
         <p
           className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
         >
-          <Image src='/location.svg' height={18} width={18} /> {location}
+          <Image src='/location.svg' height={18} width={18} alt='Location icon' /> {location}
         </p>
         <h1 className={styles["offer-details__name"]}>{name}</h1>
         <p
@@ -86,12 +86,12 @@ function OfferDetails({
           <p
             className={`${styles["offer-contact__email"]} ${styles["offer-contact__email--bold"]}`}
           >
-            <Image src='/email.svg' height={18} width={18} /> {email}
+            <Image src='/email.svg' height={18} width={18} alt='Email icon' /> {email}
           </p>
           <p
             className={`${styles["offer-contact__phone-number"]} ${styles["offer-contact__phone-number--bold"]}`}
           >
-            <Image src='/phone.svg' height={18} width={18} /> {phoneNumber}
+            <Image src='/phone.svg' height={18} width={18} alt='Phone icon' /> {phoneNumber}
           </p>
         </div>
         <p className={styles["offer-details__description"]}>

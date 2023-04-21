@@ -27,13 +27,13 @@ function Card(offer: IOffer) {
             className={`${styles["offer-card__section"]} ${styles["offer-card__section--column"]}`}
           >
             <p className={styles["offer-card__email"]}>
-              <Image src='/email.svg' height={18} width={18} /> {offer.email}
+              <Image src='/email.svg' height={18} width={18} alt='Email icon' /> {offer.email}
             </p>
             <p className={styles["offer-card__location"]}>
-              <Image src='/location.svg' height={18} width={18} />  {offer.location}
+              <Image src='/location.svg' height={18} width={18} alt='Location icon' />  {offer.location}
             </p>
             <p className={styles["offer-card__phone-number"]}>
-              <Image src='/phone.svg' height={18} width={18} />  {offer.phoneNumber}
+              <Image src='/phone.svg' height={18} width={18} alt='Phone icon' />  {offer.phoneNumber}
             </p>
           </div>
           <hr className={styles["offer-card__divider"]} />
