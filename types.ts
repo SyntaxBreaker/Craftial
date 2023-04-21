@@ -53,4 +53,5 @@ export interface IUser {
   email_verified: boolean;
   sub: string;
   sid: string;
+  ['roles/roles']: string[];
 }

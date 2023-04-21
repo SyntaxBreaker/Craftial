@@ -4,9 +4,9 @@ import Image from "next/image";
 import { IOffer } from "types";
 import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
-import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import removeOffer from "utils/toast";
 
 function OfferDetails({
   _id,
@@ -19,21 +19,6 @@ function OfferDetails({
 }: IOffer) {
   const { user, error, isLoading } = useUser();
   const router = useRouter();
-
-  function removeOffer() {
-    toast.info("The offer is being removed.", {
-      position: "top-center",
-    });
-    fetch(`api/removeOffer/${_id}`, {
-      method: "DELETE",
-    });
-    toast.success("The offer has been removed.", {
-      position: "top-center",
-    });
-    setTimeout(() => {
-      router.push("/");
-    }, 3000);
-  }
 
   function handleFavorites() {
     let favoriteList = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -75,7 +60,7 @@ function OfferDetails({
         {user?.email === email && (
           <button
             className={`${styles["offer-details__button"]} ${styles["offer-details__button--remove"]}`}
-            onClick={removeOffer}
+            onClick={() => removeOffer(_id, router)}
           >
             Remove offer
           </button>
