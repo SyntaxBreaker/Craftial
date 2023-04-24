@@ -41,6 +41,10 @@
     &__title {
         font-size: 24px;
         color: variables.$primary-color;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__description {

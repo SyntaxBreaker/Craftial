@@ -60,7 +60,7 @@ export default withPageAuthRequired(function Dashboard({ user, version, offers }
                 <section className={styles['admin__cards']}>
                     {offers.map(offer => (
                         <article key={offer._id} className={`${styles['admin__card']} ${styles['admin__card--full']}`}>
-                            <h3 className={styles['admin__title']}>{offer.name}</h3>
+                            <Link href={`/${offer._id}`}><h3 className={styles['admin__title']}>{offer.name}</h3></Link>
                             <p className={styles['admin__description']}>{offer.description}</p>
                             <p className={styles['admin__price']}>${offer.price}</p>
                             <p className={styles['admin__email']}><Image src='/email.svg' height={14} width={14} alt='Email icon' /> {offer.email}</p>
