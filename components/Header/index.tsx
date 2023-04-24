@@ -1,10 +1,28 @@
+import { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
-import Image from "next/image";
 
 function Header() {
-  const { user, error, isLoading } = useUser();
+  const { user } = useUser();
+  const roles: string[] | undefined = user && user['roles/roles'] as string[];
+  const isAdmin = roles?.includes('Admin');
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth >= 960) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+      }
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [])
 
   return (
     <header className={styles["header"]}>
@@ -13,36 +31,29 @@ function Header() {
           Craftial
         </a>
       </Link>
-      <div className={styles["account"]}>
-        <span className={styles["account__item"]}>
-          <Link href="/newOffer">
-            <a className={styles["account__link"]} tabIndex={2}>
-              <Image
-                src="/plus.svg"
-                width="32px"
-                height="32px"
-                alt="Create a new offer"
-              />
-            </a>
-          </Link>
-        </span>
-        <span className={styles["account__item"]}>
-          <Link href="/favorites">
-            <a className={styles["account__link"]} tabIndex={3}>
-              <Image
-                src="/heart.svg"
-                width="32px"
-                height="32px"
-                alt="Redirect to favorite offers"
-              />
-            </a>
-          </Link>
-        </span>
+      <button className={styles['header__button']} onClick={() => setIsOpen(!isOpen)}>&#9776;</button>
+      {isOpen && <nav className={styles["header__nav"]} onClick={() => setIsOpen(!isOpen)}>
+        <Link href="/newOffer">
+          <a className={`${styles["header__link"]} ${styles["header__link--small"]} ${styles["header__link--hamburger"]}`} tabIndex={2}>
+            Create a new offer
+          </a>
+        </Link>
+        <Link href="/favorites">
+          <a className={`${styles["header__link"]} ${styles["header__link--small"]} ${styles["header__link--hamburger"]}`} tabIndex={3}>
+            Favorite offers
+          </a>
+        </Link>
         {user ? (
           <>
+            {isAdmin && <Link href="/admin"><a
+              className={`${styles["header__link"]} ${styles["header__link--small"]} ${styles["header__link--hamburger"]}`}
+              tabIndex={4}
+            >
+              Admin panel
+            </a></Link>}
             <Link href="/api/auth/logout">
               <a
-                className={`${styles["account__link"]} ${styles["account__link--white"]}`}
+                className={`${styles["header__link"]} ${styles["header__link--small"]} ${styles["header__link--hamburger"]}`}
                 tabIndex={4}
               >
                 Sign out
@@ -52,14 +63,14 @@ function Header() {
         ) : (
           <Link href="/api/auth/login">
             <a
-              className={`${styles["account__link"]} ${styles["account__link--white"]}`}
+              className={`${styles["header__link"]} ${styles["header__link--small"]} ${styles["header__link--hamburger"]}`}
               tabIndex={4}
             >
               Sign in
             </a>
           </Link>
         )}
-      </div>
+      </nav>}
     </header>
   );
 }
