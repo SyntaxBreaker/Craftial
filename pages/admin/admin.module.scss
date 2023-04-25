@@ -77,8 +77,15 @@
     &__description,
     &__email,
     &__publicationDate,
-    &__buttons {
+    &__buttons,
+    &__images {
         margin-top: 16px;
+    }
+
+    &__images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     &__publicationDate {

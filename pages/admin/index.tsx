@@ -11,7 +11,7 @@ import removeOffer from "utils/toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default withPageAuthRequired(function Dashboard({ user, version, offers }: { user: IUser, version: number | undefined, offers: IOffer[] }) {
+export default withPageAuthRequired(function Admin({ user, version, offers }: { user: IUser, version: number | undefined, offers: IOffer[] }) {
     const STATS = [
         {
             id: 0,
@@ -69,6 +69,11 @@ export default withPageAuthRequired(function Dashboard({ user, version, offers }
                                 <p className={styles['admin__email']}><Image src='/email.svg' height={14} width={14} alt='Email icon' /> {offer.email}</p>
                                 <p className={styles['admin__location']}><Image src='/location.svg' height={14} width={14} alt='Location icon' /> {offer.location}</p>
                                 <p className={styles['admin__phoneNumber']}><Image src='/phone.svg' height={14} width={14} alt='Phone icon' /> {offer.phoneNumber}</p>
+                                <div className={styles['admin__images']}>
+                                    {offer.images.map(image => (
+                                        <Image key={image.id} src={image.url} height={100} width={100} alt='' />
+                                    ))}
+                                </div>
                                 <p className={styles['admin__publicationDate']}>Publication date: {offer.createdAt.split("T")[0]}</p>
                             </div>
                             <div className={styles['admin__footer']}>
