@@ -7,14 +7,15 @@ function Header() {
   const { user } = useUser();
   const roles: string[] | undefined = user && user['roles/roles'] as string[];
   const isAdmin = roles?.includes('Admin');
+  const [isMobile, setIsMobile] = useState(false); 
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth >= 960) {
-        setIsOpen(true);
+        setIsMobile(false);
       } else {
-        setIsOpen(false);
+        setIsMobile(true);
       }
     }
 
@@ -27,12 +28,12 @@ function Header() {
   return (
     <header className={styles["header"]}>
       <Link href="/" className={styles["header__logo"]}>
-        <a className={styles["header__link"]} tabIndex={1}>
+        <a className={styles["header__link"]} tabIndex={1} onClick={() => setIsOpen(false)}>
           Craftial
         </a>
       </Link>
-      <button className={styles['header__button']} onClick={() => setIsOpen(!isOpen)}>&#9776;</button>
-      {isOpen && <nav className={styles["header__nav"]} onClick={() => setIsOpen(!isOpen)}>
+      {isMobile && <button className={styles['header__button']} onClick={() => setIsOpen(!isOpen)}>&#9776;</button>}
+      {(isMobile && isOpen || !isMobile) && <nav className={styles["header__nav"]} onClick={() => isMobile && setIsOpen(!isOpen)}>
         <Link href="/newOffer">
           <a className={`${styles["header__link"]} ${styles["header__link--small"]} ${styles["header__link--hamburger"]}`} tabIndex={2}>
             Create a new offer
