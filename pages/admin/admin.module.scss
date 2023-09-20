@@ -97,6 +97,14 @@
         background-color: variables.$tertiary-color;
         color: white;
         border: none;
+        border-radius: 3px;
+
+        &--remove {
+            padding: 7px 16px;
+            background-color: transparent;
+            border: 1px solid variables.$primary-color;
+            color: black;
+        }
 
         &:not(:first-child) {
             margin-left: 4px;

@@ -81,7 +81,7 @@ export default withPageAuthRequired(function Admin({ user, version, offers }: { 
                                     <Link href={`/editOffer/${offer._id}`}>
                                         <button className={styles['admin__button']}>Edit</button>
                                     </Link>
-                                    <button className={styles['admin__button']} onClick={() => removeOffer(offer._id, router)}>Delete</button>
+                                    <button className={`${styles['admin__button']} ${styles['admin__button--remove']}`} onClick={() => removeOffer(offer._id, router)}>Delete</button>
                                 </div>
                             </div>
                         </article>
