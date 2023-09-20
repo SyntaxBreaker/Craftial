@@ -4,9 +4,15 @@
   width: 100%;
   margin-top: 1rem;
 
+  &__link {
+    text-decoration: none;
+    color: variables.$quaternary-color;
+  }
+
   &__button {
     padding: 0.6rem;
     border: 0;
+    border-radius: 3px;
     font-size: 1rem;
     cursor: pointer;
 
@@ -16,11 +22,24 @@
 
     &--edit {
       background-color: variables.$primary-color;
+
+      &:hover {
+        padding: .5rem;
+        background-color: variables.$secondary-color;
+        color: black;
+        border: 1px solid variables.$primary-color;
+      }
     }
 
     &--remove {
-      background-color: variables.$secondary-color;
+      padding: .5rem;
+      border: 1px solid variables.$primary-color;
+      background-color: transparent;
       margin-left: 0.6rem;
+
+      &:hover {
+        background-color: variables.$secondary-color;
+      }
     }
 
     &--favorite {
@@ -36,11 +55,6 @@
         }
       }
     }
-  }
-
-  &__link {
-    text-decoration: none;
-    color: variables.$quaternary-color;
   }
 
   &__price,
@@ -110,10 +124,6 @@
     line-height: 1.5rem;
     font-size: 0.75rem;
 
-    &--bold {
-      font-weight: 900;
-    }
-
     &--green {
       color: variables.$primary-color;
     }
@@ -121,5 +131,9 @@
 
   @media screen and (min-width: 768px) {
     flex: 1;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex: 2;
   }
 }

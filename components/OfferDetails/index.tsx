@@ -97,7 +97,7 @@ function OfferDetails({
         <p className={styles["offer-details__description"]}>
           Description:{" "}
           <span
-            className={`${styles["offer-details__description--bold"]} ${styles["offer-details__description--green"]}`}
+            className={`${styles["offer-details__description--green"]}`}
           >
             {description}
           </span>
