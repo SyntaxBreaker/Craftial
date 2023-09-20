@@ -1,6 +1,6 @@
 # Craftial
 
-> A simple shop for handmade goods.
+> Craftial is an online marketplace that specializes in handmade creations.
 
 ## Table of Contents
 
