@@ -8,6 +8,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const { offerId } = req.query;
       await connectToMongoDB();
       await offer.findOneAndUpdate({ _id: offerId }, req.body);
+      return res.status(200).json({message: "The offer has been successfully edited."});
     } catch (err) {
       console.log(err);
     }

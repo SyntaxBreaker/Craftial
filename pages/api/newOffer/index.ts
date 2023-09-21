@@ -9,6 +9,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
       const offer = new Offer(req.body);
       await offer.save();
+      return res.status(200).json("Your offer has been successfully created.")
     } catch (err) {
       console.log(err);
     }

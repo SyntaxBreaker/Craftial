@@ -8,7 +8,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const { offerId } = req.query;
       await connectToMongoDB();
       await offer.findOneAndRemove({ _id: offerId });
-      return res.status(200).json({message: "The offer was removed successfully."})
+      return res.status(200).json({message: "The offer has been successfully removed."})
     } catch (err) {
       console.log(err);
     }
