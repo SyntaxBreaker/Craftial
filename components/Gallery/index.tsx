@@ -1,8 +1,6 @@
 import styles from "./gallery.module.scss";
 import { useState, useEffect, Fragment } from "react";
 import Image from "next/image";
-import ArrowLeft from "public/arrow-left.svg";
-import ArrowRight from "public/arrow-right.svg";
 import { IImages } from "types";
 
 function Gallery({ images }: IImages) {

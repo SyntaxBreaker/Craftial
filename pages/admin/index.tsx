@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { IOffer, IUser } from 'types';
 import styles from './admin.module.scss';

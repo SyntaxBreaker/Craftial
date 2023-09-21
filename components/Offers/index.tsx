@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./offers.module.scss";
-import { IOffers, IOffer } from "../../types";
+import { IOffer } from "../../types";
 import Card from "components/Card";
 import SearchBox from "components/SearchBox";
 

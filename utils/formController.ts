@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { IImage, IOptions, IForm, IImages } from "types";
+import { IImage, IOptions, IForm } from "types";
 
 export const handleChange = (
   event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
