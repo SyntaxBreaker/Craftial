@@ -10,6 +10,7 @@ import Link from "next/link";
 import removeOffer from "utils/toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
 
 export default withPageAuthRequired(function Admin({ user, version, offers }: { user: IUser, version: number | undefined, offers: IOffer[] }) {
     const STATS = [
@@ -40,6 +41,9 @@ export default withPageAuthRequired(function Admin({ user, version, offers }: { 
 
     return (
         <>
+            <Head>
+                <title>Admin panel</title>
+            </Head>
             <ToastContainer
                 autoClose={3000}
                 theme="colored"
