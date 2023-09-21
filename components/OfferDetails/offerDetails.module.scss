@@ -9,8 +9,14 @@
     color: variables.$quaternary-color;
   }
 
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: .6rem;
+  }
+
   &__button {
-    padding: 0.6rem;
+    padding: .6rem;
     border: 0;
     border-radius: 3px;
     font-size: 1rem;
@@ -21,21 +27,18 @@
     }
 
     &--edit {
+      border: 1px solid variables.$primary-color;
       background-color: variables.$primary-color;
 
       &:hover {
-        padding: .5rem;
         background-color: variables.$secondary-color;
         color: black;
-        border: 1px solid variables.$primary-color;
       }
     }
 
     &--remove {
-      padding: .5rem;
       border: 1px solid variables.$primary-color;
       background-color: transparent;
-      margin-left: 0.6rem;
 
       &:hover {
         background-color: variables.$secondary-color;
@@ -44,7 +47,6 @@
 
     &--favorite {
       background-color: variables.$primary-color;
-      margin-left: 0.6rem;
 
       @media screen and (min-width: 768px) {
         background-color: white;

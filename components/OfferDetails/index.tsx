@@ -48,6 +48,7 @@ function OfferDetails({
         }}
       />
       <div className={styles["offer-details"]}>
+        <div className={styles["offer-details__buttons"]}>
         {user?.email === email && (
           <Link href={`/editOffer/${_id}`}>
             <a
@@ -71,6 +72,7 @@ function OfferDetails({
         >
           💛
         </button>
+        </div>
         <p
           className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
         >
