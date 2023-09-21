@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Form from "components/Form";
 import { IForm } from "types";
@@ -17,8 +16,6 @@ export default withPageAuthRequired(function NewOffer({ user }) {
     images: [],
   });
   const [isError, setIsError] = useState<boolean>(false);
-
-  const router = useRouter();
 
   return (
     <>
@@ -40,7 +37,6 @@ export default withPageAuthRequired(function NewOffer({ user }) {
               },
               body: offer,
             },
-            router,
             setIsError
           )
         }

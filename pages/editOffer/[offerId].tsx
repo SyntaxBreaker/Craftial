@@ -49,7 +49,6 @@ export default withPageAuthRequired(function EditOffer({ offerToEdit, user }) {
               },
               body: offer,
             },
-            router,
             setIsError
           )
         }

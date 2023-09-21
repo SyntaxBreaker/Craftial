@@ -59,7 +59,6 @@ export const handleSubmit = async (
   event: React.SyntheticEvent,
   URL: string,
   options: IOptions,
-  router: any,
   setIsError: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   event.preventDefault();
@@ -105,10 +104,8 @@ export const handleSubmit = async (
     }
 
     fetch(URL, { ...options, body })
-      .then((res) => console.log(res))
+      .then(() => window.location.href = '/')
       .catch((err) => console.log(err));
-
-    router.push("/");
   } catch (err) {
     setIsError(true);
   }
