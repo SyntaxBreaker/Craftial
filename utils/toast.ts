@@ -1,8 +1,6 @@
 import { toast } from "react-toastify";
 
 export default function removeOffer(id: string, router: any) {
-  console.log(router);
-
   toast.info("The offer is being removed.", {
     position: "top-center",
   });
