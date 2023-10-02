@@ -36,4 +36,4 @@
 
 ## Contact
 
-Created by [@xMetaneRx](https://github.com/xMetaneRx)
+Created by [@SyntaxBreaker](https://github.com/SyntaxBreaker)
