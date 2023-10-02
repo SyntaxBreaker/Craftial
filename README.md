@@ -26,7 +26,7 @@
 
 ## Getting started
 
-`git clone https://github.com/iaincollins/nextjs-starter.git`
+`git clone https://github.com/SyntaxBreaker/Craftial.git`
 
 `npm install`
 
