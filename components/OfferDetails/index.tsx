@@ -49,34 +49,40 @@ function OfferDetails({
       />
       <div className={styles["offer-details"]}>
         <div className={styles["offer-details__buttons"]}>
-        {user?.email === email && (
-          <Link href={`/editOffer/${_id}`}>
-            <a
-              className={`${styles["offer-details__link"]} ${styles["offer-details__button"]} ${styles["offer-details__button--edit"]}`}
+          {user?.email === email && (
+            <Link href={`/editOffer/${_id}`}>
+              <a
+                className={`${styles["offer-details__link"]} ${styles["offer-details__button"]} ${styles["offer-details__button--edit"]}`}
+              >
+                Edit offer
+              </a>
+            </Link>
+          )}
+          {user?.email === email && (
+            <button
+              className={`${styles["offer-details__button"]} ${styles["offer-details__button--remove"]}`}
+              onClick={() => removeOffer(_id, router)}
             >
-              Edit offer
-            </a>
-          </Link>
-        )}
-        {user?.email === email && (
+              Remove offer
+            </button>
+          )}
           <button
-            className={`${styles["offer-details__button"]} ${styles["offer-details__button--remove"]}`}
-            onClick={() => removeOffer(_id, router)}
+            className={`${styles["offer-details__button"]} ${styles["offer-details__button--favorite"]}`}
+            onClick={handleFavorites}
           >
-            Remove offer
+            💛
           </button>
-        )}
-        <button
-          className={`${styles["offer-details__button"]} ${styles["offer-details__button--favorite"]}`}
-          onClick={handleFavorites}
-        >
-          💛
-        </button>
         </div>
         <p
           className={`${styles["offer-details__location"]} ${styles["offer-details__location--bold"]}`}
         >
-          <Image src='/location.svg' height={18} width={18} alt='Location icon' /> {location}
+          <Image
+            src="/location.svg"
+            height={18}
+            width={18}
+            alt="Location icon"
+          />{" "}
+          {location}
         </p>
         <h1 className={styles["offer-details__name"]}>{name}</h1>
         <p
@@ -85,20 +91,16 @@ function OfferDetails({
           ${price}
         </p>
         <div className={styles["offer-contact"]}>
-          <p
-            className={`${styles["offer-contact__email"]} ${styles["offer-contact__email--bold"]}`}
-          >
-            <Image src='/email.svg' height={18} width={18} alt='Email icon' /> {email}
+          <p className={`${styles["offer-contact__email"]}`}>
+            <Image src="/email.svg" height={18} width={18} alt="Email icon" />{" "}
+            {email}
           </p>
-          <p
-            className={`${styles["offer-contact__phone-number"]} ${styles["offer-contact__phone-number--bold"]}`}
-          >
-            <Image src='/phone.svg' height={18} width={18} alt='Phone icon' /> {phoneNumber}
+          <p className={`${styles["offer-contact__phone-number"]}`}>
+            <Image src="/phone.svg" height={18} width={18} alt="Phone icon" />{" "}
+            {phoneNumber}
           </p>
         </div>
-        <p className={styles["offer-details__description"]}>
-          {description}
-        </p>
+        <p className={styles["offer-details__description"]}>{description}</p>
       </div>
     </>
   );
