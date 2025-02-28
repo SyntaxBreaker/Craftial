@@ -12,11 +12,11 @@
   &__buttons {
     display: flex;
     flex-direction: row;
-    gap: .6rem;
+    gap: 0.6rem;
   }
 
   &__button {
-    padding: .6rem;
+    padding: 0.6rem;
     border: 0;
     border-radius: 3px;
     font-size: 1rem;
@@ -81,7 +81,7 @@
 
   &__location {
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
     align-items: center;
     margin-top: 1.5rem;
     color: variables.$primary-color;
@@ -108,7 +108,7 @@
     &__email,
     &__phone-number {
       display: flex;
-      gap: .5rem;
+      gap: 0.5rem;
       align-items: center;
       color: variables.$tertiary-color;
 
@@ -123,12 +123,8 @@
   }
 
   &__description {
-    line-height: 1.5rem;
-    font-size: 0.75rem;
-
-    &--green {
-      color: variables.$primary-color;
-    }
+    font-size: 1rem;
+    color: variables.$tertiary-color;
   }
 
   @media screen and (min-width: 768px) {

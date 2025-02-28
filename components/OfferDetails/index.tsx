@@ -97,12 +97,7 @@ function OfferDetails({
           </p>
         </div>
         <p className={styles["offer-details__description"]}>
-          Description:{" "}
-          <span
-            className={`${styles["offer-details__description--green"]}`}
-          >
-            {description}
-          </span>
+          {description}
         </p>
       </div>
     </>
