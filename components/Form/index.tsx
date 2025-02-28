@@ -1,4 +1,4 @@
-import styles from "utils/form.module.scss";
+import styles from "./form.module.scss";
 import { IForm } from "types";
 import Image from "next/image";
 import { handleRemoveAddedImages } from "utils/formController";
